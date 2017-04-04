@@ -1,6 +1,27 @@
 {
-    "prefix" : "/",
-    "token"  : "Mjk3NDMwODQ4ODU5NTM3NDA4.C8F1Yw.KSFYXfud2rk0trhciiS0yOEbgZU",
-    "mention" : "@",
-    "channelid" : "297864380622569472"
+    "name":"workingbot",
+    "version": "1.0",
+    "description": "Discord Bot",
+    "main": "mybot.js",
+    "scipts": {
+        "start": "node mybot.js"
+    },
+"dependencies": {
+    "ejs":"2.3.3",
+    "express":"4.13.3"
+},
+    "engines": {
+        "node":"7.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tynoxs/workingbot.git"
+    },
+    "keywords": [
+        "node",
+        "heroku",
+        "express"
+    ],
+    "license": "MIT"
 }
+    
