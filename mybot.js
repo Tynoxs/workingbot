@@ -1,22 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require("./config.json");
 
 client.on('ready', () => {
   console.log('I am ready!');
 });
-
-client.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage(`Welcome to the Hub, ${member.user}! :smile:`);
-});
-
-//client.on("message", message => {
-   // if (message.author.bot) return;
-    //if (message.content && ("fuck")) {
-      //  message.channel.sendMessage(`${client.user} don't swear!`);
-    //}
-//});
 
 client.on('message', message => {
     
@@ -27,21 +14,8 @@ client.on('message', message => {
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
     
-        //says something through the bot
-    
-    if (command === "alert") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "Admin Power");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-        client.channels.get('193495594789109761').sendMessage(`**Alert:** ${args.join(" ")}`);
-    }
-        //client.channels.get('193495594789109761')
-        //shows what commands the bot uses
-    
     if (command === "help") {
-    message.channel.sendMessage('```TheHub Bot keeps track of Users that join, get banned and unbanned.\n\nNormal Commands:\n/report @Username "Reason" = Disabled\n/rqch "Channelname" = Disabled\n\nAdmin Power Commands:\n/alert Text = Sends a message through the Bot\n/setgame Statusname = Sets the "is playing" status of the Bot\n/ban @Username = Bans a User from your Discord Server\n/kick @Username = Kicks a User from your Discord Server```');
+    message.channel.sendMessage('```Unavailable```');
     } else
         
         //sets the playing status of the bot
@@ -107,4 +81,4 @@ client.on('message', message => {
   
 });
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
