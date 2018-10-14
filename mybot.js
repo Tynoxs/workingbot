@@ -16,7 +16,7 @@ client.on('message', message => {
     var argresult = args.join('');
 
     if (command === "help") {
-    message.channel.sendMessage('```Unavailable```');
+    message.reply('Unavailable');
     } else
         
   
