@@ -32,6 +32,10 @@ client.on('message', message => {
         });
         }
     
+  
+    if (command == "dsize") {
+		  message.channel.sendMessage(`${client.user} 8====D`));
+	  } else
         
     
         //kicks a user using the @mention command
