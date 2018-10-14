@@ -15,7 +15,13 @@ client.on('message', message => {
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
     
-   
+    if (command === "help") {
+    message.channel.sendMessage('```Unavailable```');
+    } else    
+      
+    if (command === "size") {
+    message.channel.sendMessage('8==D');
+    } else
 
 });
 
