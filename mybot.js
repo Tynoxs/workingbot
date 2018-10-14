@@ -22,20 +22,6 @@ client.on('message', message => {
     if (command === "size") {
     message.channel.sendMessage(`*8==D*`);
     } else
-      
-    client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content && ("http://")) {
-    message.channel.sendMessage(`${client.user} no links in this Channel!`);
-    }
-});
-  
-  client.on("message", message => {
-    if (message.author.bot) return;
-    if (message.content && ("https://")) {
-    message.channel.sendMessage(`${client.user} no links in this Channel!`);
-    }
-});
 
 });
 
