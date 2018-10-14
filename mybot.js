@@ -19,6 +19,10 @@ client.on('message', message => {
     message.channel.sendMessage('```Unavailable```');
     } else
         
+    if (command == "size") {
+		message.channel.sendMessage(`${client.user} test`));
+	  } else
+      
         //sets the playing status of the bot
         
     if (command === "setgame") {
