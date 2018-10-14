@@ -23,18 +23,19 @@ client.on('message', message => {
     message.channel.sendMessage(`*8==D*`);
     } else
       
-        //sets the playing status of the bot
-        
-    if (command === "setgame") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-            client.user.setGame(argresult).then(member => {
-            message.channel.sendMessage(`*Playing Status has been changed!*`).catch(console.error);
-        });
-        }
+    client.on("message", message => {
+    if (message.author.bot) return;
+    if (message.content && ("http://")) {
+    message.channel.sendMessage(`${client.user} no links in this Channel!`);
+    }
+});
+  
+  client.on("message", message => {
+    if (message.author.bot) return;
+    if (message.content && ("https://")) {
+    message.channel.sendMessage(`${client.user} no links in this Channel!`);
+    }
+});
 
 });
 
