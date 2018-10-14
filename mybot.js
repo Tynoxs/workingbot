@@ -17,17 +17,13 @@ client.on('message', message => {
     
     if (command === "help") {
     message.channel.sendMessage('```Unavailable```');
-    } else
-        
-    if (command === "size") {
-		message.channel.sendMessage(`*${client.user} test*`));
-	  } else
+    } else    
       
         //sets the playing status of the bot
         
     if (command === "setgame") {
         if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "Admin Power");
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
@@ -40,7 +36,7 @@ client.on('message', message => {
         
     if (command === "kick") {
         if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "Admin Power");
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         }
@@ -51,9 +47,6 @@ client.on('message', message => {
         if(!kickMember) {
             return message.channel.sendMessage("Invalid User");
         }
-        if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
-            return message.channel.sendMessage("I don't have the permission (KICK_MEMBER) to do this.");
-        }
         kickMember.kick().then(member => {
             message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
         }).catch(console.error);
@@ -63,7 +56,7 @@ client.on('message', message => {
     
     if (command === "ban") {
         if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "Admin Power");
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         }
@@ -73,9 +66,6 @@ client.on('message', message => {
         let banMember = message.guild.member(message.mentions.users.first());
         if(!banMember) {
             return message.channel.sendMessage("Invalid User");
-        }
-        if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
-            return message.channel.sendMessage("I don't have the permission (BAN_MEMBER) to do this.");
         }
         banMember.ban().then(member => {
             message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
