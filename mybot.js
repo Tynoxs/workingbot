@@ -20,7 +20,7 @@ client.on('message', message => {
     } else
         
     if (command == "size") {
-		message.channel.sendMessage(`${client.user} test`));
+		message.channel.sendMessage(`*${client.user} test*`));
 	  } else
       
         //sets the playing status of the bot
