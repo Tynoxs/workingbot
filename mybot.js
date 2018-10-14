@@ -21,7 +21,7 @@ client.on('message', message => {
         
         //sets the playing status of the bot
         
-    if (command == "setgame") {
+    if (command === "setgame") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "Admin Power");
         if(!message.member.roles.has(adminRole.id)) {
@@ -33,7 +33,7 @@ client.on('message', message => {
         }
     
   
-    if (command == "dsize") {
+    if (command === "dsize") {
 		  message.channel.sendMessage(`${client.user} 8====D`));
 	  } else
         
