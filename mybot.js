@@ -31,13 +31,7 @@ client.on('message', message => {
             message.channel.sendMessage(`*Playing Status has been changed!*`).catch(console.error);
         });
         }
-    
-  
-    if (command === "dsize") {
-		  message.channel.sendMessage(`${client.user} 8====D`));
-	  } else
-        
-    
+
         //kicks a user using the @mention command
         
     if (command === "kick") {
