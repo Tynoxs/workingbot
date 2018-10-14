@@ -1,27 +1,13 @@
 {
-    "name":"workingbot",
-    "version": "1.0",
-    "description": "Discord Bot",
-    "main": "mybot.js",
-    "scipts": {
-        "start": "node mybot.js"
-    },
-"dependencies": {
-    "ejs":"2.3.3",
-    "express":"4.13.3"
-},
-    "engines": {
-        "node":"8.12.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Tynoxs/workingbot.git"
-    },
-    "keywords": [
-        "node",
-        "heroku",
-        "express"
-    ],
-    "license": "MIT"
+  "name": "HubBot",
+  "description": "Bot for TheHUB",
+  "version": "0.0.0",
+  "main": "workingbot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
+  }
 }
-    
