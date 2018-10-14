@@ -20,7 +20,7 @@ client.on('message', message => {
     } else    
       
     if (command === "size") {
-    message.channel.sendMessage(`8==D`);
+    message.channel.sendMessage('8==D');
     } else
 
 });
