@@ -19,6 +19,10 @@ client.on('message', message => {
     message.channel.sendMessage('```Unavailable```');
     } else    
       
+    if (command === "size") {
+    message.channel.sendMessage(`*8==D*`);
+    } else
+      
         //sets the playing status of the bot
         
     if (command === "setgame") {
@@ -32,46 +36,6 @@ client.on('message', message => {
         });
         }
 
-        //kicks a user using the @mention command
-        
-    if (command === "kick") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        }
-        if(message.mentions.users.size === 0) {
-            return message.channel.sendMessage("Please mention a user to kick");
-        }
-        let kickMember = message.guild.member(message.mentions.users.first());
-        if(!kickMember) {
-            return message.channel.sendMessage("Invalid User");
-        }
-        kickMember.kick().then(member => {
-            message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
-        }).catch(console.error);
-        }
-        
-        //bans a user using the @mention command
-    
-    if (command === "ban") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        }
-        if(message.mentions.users.size === 0) {
-            return message.channel.sendMessage("Please mention a user to ban");
-        }
-        let banMember = message.guild.member(message.mentions.users.first());
-        if(!banMember) {
-            return message.channel.sendMessage("Invalid User");
-        }
-        banMember.ban().then(member => {
-            message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
-        }).catch(console.error);
-        }
-  
 });
 
 client.login(process.env.BOT_TOKEN);
