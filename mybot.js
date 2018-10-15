@@ -52,7 +52,8 @@ client.on('message', message => {
     let reportschannel = message.guild.channels.find("name", "test2");
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
-    reportschannel.send(reportEmbed);
+     message.channel.send(reportEmbed);
+    //reportschannel.send(reportEmbed);
     //message.delete().catch(O_o=>{});
     
 
