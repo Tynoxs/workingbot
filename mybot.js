@@ -31,7 +31,6 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
-        message.channel.sendMessage("*User has been reported!*");
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
@@ -41,6 +40,7 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
+        message.channel.sendMessage("*User has been reported!*");
         client.channels.get('501450922053074984').sendMessage(`**Report from ${member.user.username}:** ${args.join(" ")}`);
     }
   
