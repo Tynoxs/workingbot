@@ -24,6 +24,15 @@ client.on('message', message => {
         } 
         message.channel.sendMessage("8========================================D");
     }
+  
+    if (command === "alert") {
+        if (message.author.bot) return;
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+        if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+        client.channels.get('296048410723876864').sendMessage(`**Alert:** ${args.join(" ")}`);
+    }
         
   
 });
