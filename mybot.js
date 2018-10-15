@@ -31,7 +31,7 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
-        client.channels.get('296048410723876864').sendMessage(`**Alert:** ${args.join(" ")}`);
+        client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
         
   
