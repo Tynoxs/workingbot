@@ -16,6 +16,7 @@ client.on('message', message => {
     var argresult = args.join('');
 
   
+    //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
@@ -25,56 +26,7 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-    if (command === "ping") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-        message.channel.sendMessage("Pinged");
-    }
-  
-    if (command === "report"){
-
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("Couldn't find user.");
-    let rreason = args.join(" ").slice(22);
-
-    let reportEmbed = new Discord.RichEmbed()
-    .setDescription("Reports")
-    .setColor("#15f153")
-    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
-    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
-    .addField("Channel", message.channel)
-    .addField("Time", message.createdAt)
-    .addField("Reason", rreason);
-
-    let reportschannel = message.guild.channels.find(`name`, "test2");
-    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
-
-     message.channel.send(reportEmbed);
-    //reportschannel.send(reportEmbed);
-    //message.delete().catch(O_o=>{});
-    
-
-    return;
-  }
-  
-    if(command === "serverinfo"){
-
-    let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-    .setDescription("Server Information")
-    .setColor("#15f153")
-    .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined", message.member.joinedAt)
-    .addField("Total Members", message.guild.memberCount);
-
-    return message.channel.send(serverembed);
-  }
-  
+   //COMMAND - KICK --- /kick @user --- kicks a user from the server
    if (command === "kick") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
@@ -94,10 +46,9 @@ client.on('message', message => {
         kickMember.kick().then(member => {
             message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
         }).catch(console.error);
-        }
-        
-        //bans a user using the @mention command
+        }      
     
+    //COMMAND - BAN --- /ban @user --- bans a user from the server
     if (command === "ban") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
