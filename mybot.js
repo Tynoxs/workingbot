@@ -35,7 +35,7 @@ client.on('message', message => {
     }
   
      if (command === "report") {
-        client.channels.get('501450922053074984').sendMessage(`**Report from ${member.user.username}:** ${args.join(" ")}`);
+        client.channels.get('501450922053074984').sendMessage(`**Report from X:** ${args.join(" ")}`);
     } else
   
    if (command === "kick") {
