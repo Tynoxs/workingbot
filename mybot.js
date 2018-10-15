@@ -16,15 +16,6 @@ client.on('message', message => {
     var argresult = args.join('');
 
   
-    if (command === "size") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-        message.channel.sendMessage("8========================================D");
-    }
-  
     if (command === "alert") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
