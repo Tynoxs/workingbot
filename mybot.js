@@ -40,9 +40,6 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
-        if(message.mentions.users.size === 0) {
-            return message.channel.sendMessage("Please mention a user to report");
-        }
         client.channels.get('501450922053074984').sendMessage(`**Report:** ${args.join(" ")}`);
     }
   
