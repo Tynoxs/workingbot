@@ -43,13 +43,7 @@ client.on('message', message => {
         if(message.mentions.users.size === 0) {
             return message.channel.sendMessage("Please mention a user to report");
         }
-        let reportMember = message.guild.member(message.mentions.users.first());
-        if(!reportMember) {
-            return message.channel.sendMessage("Invalid User");
-        }
-        reportMember.report().then(member => {
         client.channels.get('501450922053074984').sendMessage(`**${member.user.username} report:** ${args.join(" ")}`);
-        }).catch(console.error);
     }
   
    if (command === "kick") {
