@@ -35,7 +35,6 @@ client.on('message', message => {
     }
   
      if (command === "report") {
-        message.channel.sendMessage("*User has been reported!*");
         client.channels.get('501450922053074984').sendMessage(`**Report from ${member.user.username}:** ${args.join(" ")}`);
     } else
   
