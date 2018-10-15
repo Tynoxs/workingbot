@@ -78,6 +78,9 @@ client.on('message', message => {
         }).catch(console.error);
         }
 
+        if (command === "help") {
+         message.channel.sendMessage('```TheHub Bot keeps track of Users that join, get banned and unbanned.\n\nNormal Commands:\n/report @Username "Reason" = Disabled\n/rqch "Channelname" = Disabled\n\nAdmin Power Commands:\n/alert Text = Sends a message through the Bot\n/setgame Statusname = Sets the "is playing" status of the Bot\n/ban @Username = Bans a User from your Discord Server\n/kick @Username = Kicks a User from your Discord Server```');
+        } else
   
 });
 
