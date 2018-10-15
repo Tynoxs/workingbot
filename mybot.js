@@ -34,6 +34,23 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+     if (command === "report") {
+        if (message.author.bot) return;
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+        if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+        if(message.mentions.users.size === 0) {
+            return message.channel.sendMessage("Please mention a user to report");
+        }
+        let reportMember = message.guild.member(message.mentions.users.first());
+        if(!reportMember) {
+            return message.channel.sendMessage("Invalid User");
+        }
+        client.channels.get('501450922053074984').sendMessage(`**${member.user.username} report:** ${args.join(" ")}`);
+        message.channel.sendMessage(`**${message.mentions.users} has been reported!**`);
+    }
+  
    if (command === "kick") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
