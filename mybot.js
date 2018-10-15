@@ -84,6 +84,4 @@ client.on('message', message => {
   
 });
 
-//if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You are not authorised to use this command!");
-//if(!args[0]) return message.channel.send("Define how many msg you want to delete");
 client.login(process.env.BOT_TOKEN);
