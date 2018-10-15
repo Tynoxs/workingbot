@@ -48,7 +48,6 @@ client.on('message', message => {
             return message.channel.sendMessage("Invalid User");
         }
         client.channels.get('501450922053074984').sendMessage(`**${member.user.username} report:** ${args.join(" ")}`);
-        message.channel.sendMessage(`**${message.mentions.users} has been reported!**`);
     }
   
    if (command === "kick") {
