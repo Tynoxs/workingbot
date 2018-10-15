@@ -49,12 +49,12 @@ client.on('message', message => {
     .addField("Time", message.createdAt)
     .addField("Reason", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "reporttest");
+    let reportschannel = message.guild.channels.get('501450922053074984');
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
-
-    message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
+    message.delete().catch(O_o=>{});
+    
 
     return;
   }
