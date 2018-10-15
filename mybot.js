@@ -35,14 +35,9 @@ client.on('message', message => {
     }
   
      if (command === "report") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
         message.channel.sendMessage("*User has been reported!*");
         client.channels.get('501450922053074984').sendMessage(`**Report from ${member.user.username}:** ${args.join(" ")}`);
-    }
+    } else
   
    if (command === "kick") {
         if (message.author.bot) return;
