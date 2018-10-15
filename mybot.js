@@ -25,20 +25,45 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-    if (command === "report") {
-        if (message.author.bot) return;
-        if(message.mentions.users.size === 0) {
-            return message.channel.sendMessage("Please mention a user to report");
-        }
-        let reportMember = message.guild.member(message.mentions.users.first());
-        if(!reportMember) {
-            return message.channel.sendMessage("Invalid User");
-        }
-        reportMember.report().then(member => {
-            message.channel.sendMessage(`*${member.user.username} was reported!*`).catch(console.error);
-            client.channels.get('501450922053074984').sendMessage(`**Report:** ${args.join(" ")}`);
-        }).catch(console.error);
-        }
+    if (command === "report"){
+
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send("Couldn't find user.");
+    let rreason = args.join(" ").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Reports")
+    .setColor("#15f153")
+    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+    .addField("Channel", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", rreason);
+
+    let reportschannel = message.guild.channels.find(`name`, "reports");
+    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);
+
+    return;
+  }
+  
+    if(command === "serverinfo"){
+
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor("#15f153")
+    .setThumbnail(sicon)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  }
   
    if (command === "kick") {
         if (message.author.bot) return;
