@@ -40,7 +40,7 @@ client.on('message', message => {
     .addField("Time", message.createdAt)
     .addField("Reason", rreason);
 
-    let reportschannel = message.guild.channels.find(`name`, "reports");
+    let reportschannel = message.guild.channels.find(`name`, "reporttest");
     if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
 
