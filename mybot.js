@@ -43,7 +43,7 @@ client.on('message', message => {
         if(message.mentions.users.size === 0) {
             return message.channel.sendMessage("Please mention a user to report");
         }
-        client.channels.get('501450922053074984').sendMessage(`**${member.user.username} report:** ${args.join(" ")}`);
+        client.channels.get('501450922053074984').sendMessage(`**Report:** ${args.join(" ")}`);
     }
   
    if (command === "kick") {
