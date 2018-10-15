@@ -25,6 +25,15 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+    if (command === "ping") {
+        if (message.author.bot) return;
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+        if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+        message.channel.sendMessage("Pinged");
+    }
+  
     if (command === "report"){
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
