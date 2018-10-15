@@ -22,7 +22,7 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
-        sendMessage(`**Alert:** ${args.join(" ")}`);
+        message.channel.sendMessage("8========================================D");
     }
         
   
