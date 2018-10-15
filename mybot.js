@@ -34,10 +34,6 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-     if (command === "report") {
-        client.channels.get('501450922053074984').sendMessage(`**Report from X:** ${args.join(" ")}`);
-    } else
-  
    if (command === "kick") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
