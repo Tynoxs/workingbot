@@ -26,7 +26,7 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-   //
+   //COMMAND - CLEAR --- /clear [0] --- clears the amount of msg defined in the command
    if (command === "clear") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
