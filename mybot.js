@@ -26,6 +26,18 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+   //
+   if (command === "clear") {
+        if (message.author.bot) return;
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+        if(!message.member.roles.has(adminRole.id)) {
+           return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+        message.channel.bulkDelete(args[0]).then(() => {
+        message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(5000));
+   });
+   }
+  
    //COMMAND - KICK --- /kick @user --- kicks a user from the server
    if (command === "kick") {
         if (message.author.bot) return;
@@ -72,4 +84,6 @@ client.on('message', message => {
   
 });
 
+//if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You are not authorised to use this command!");
+//if(!args[0]) return message.channel.send("Define how many msg you want to delete");
 client.login(process.env.BOT_TOKEN);
