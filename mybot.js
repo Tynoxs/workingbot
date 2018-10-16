@@ -29,7 +29,7 @@ client.on('message', message => {
     //SERVERINFORMATION
     if (command === "serverinfo") {
     message.channel.send({embed: {
-    color: 3447003,
+    color: 10181046,
     author: {
       name: "Server Information",
       icon_url: message.guild.iconURL
@@ -67,7 +67,7 @@ client.on('message', message => {
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
     client.channels.get('501801149071097866').sendMessage({embed: {
-    color: 15158332,
+    color: 15844367,
     author: {
       name: "User Report",
       icon_url: message.guild.iconURL
@@ -135,6 +135,39 @@ client.on('message', message => {
             return message.channel.sendMessage("I don't have the permission (KICK_MEMBER) to do this.");
         }
         kickMember.kick().then(member => {
+          
+        client.channels.get('501801149071097866').sendMessage({embed: {
+        color: 15105570,
+        author: {
+        name: "Kicked User",
+        icon_url: message.guild.iconURL
+        },
+        description: "A User has been kicked from TheHUB",
+        fields: [{
+        name: "Kicked User",
+        value: (`${kUser} with ID ${kUser.id}`)
+        },
+        {
+        name: "Kicked By",
+        value: (`<@${message.author.id}> with ID ${message.author.id}`)
+        },
+        {
+        name: "Kicked At",
+        value: (`${message.createdAt}`)
+        },
+        {
+        name: "Reason",
+        value: "Unavailable"
+        }       
+        ],
+        timestamp: new Date(),
+        footer: {
+         icon_url: message.guild.iconURL,
+        text: "© TheHUB"
+        }
+        }
+        });
+          
             message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
         }).catch(console.error);
         }      
@@ -157,6 +190,39 @@ client.on('message', message => {
             return message.channel.sendMessage("I don't have the permission (BAN_MEMBER) to do this.");
         }
         banMember.ban().then(member => {
+          
+          client.channels.get('501801149071097866').sendMessage({embed: {
+        color: 15158332,
+        author: {
+        name: "Banned User",
+        icon_url: message.guild.iconURL
+        },
+        description: "A User has been banned from TheHUB",
+        fields: [{
+        name: "Banned User",
+        value: (`${bUser} with ID ${bUser.id}`)
+        },
+        {
+        name: "Banned By",
+        value: (`<@${message.author.id}> with ID ${message.author.id}`)
+        },
+        {
+        name: "Banned At",
+        value: (`${message.createdAt}`)
+        },
+        {
+        name: "Reason",
+        value: "Unavailable"
+        }       
+        ],
+        timestamp: new Date(),
+        footer: {
+         icon_url: message.guild.iconURL,
+        text: "© TheHUB"
+        }
+        }
+        });
+          
             message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
         }).catch(console.error);
         }
