@@ -168,7 +168,11 @@ client.on('message', message => {
         }
         });
        
-        }      
+          message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
+        }).catch(console.error);
+        }
+  
+});   
     
     //COMMAND - BAN --- /ban @user --- bans a user from the server
     if (command === "ban") {
