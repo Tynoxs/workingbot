@@ -29,7 +29,7 @@ client.on('message', message => {
     //SERVERINFORMATION
     if (command === "serverinfo") {
     message.channel.send({embed: {
-    color: 10181046,
+    color: 3447003,
     author: {
       name: "Server Information",
       icon_url: message.guild.iconURL
@@ -67,7 +67,7 @@ client.on('message', message => {
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
     client.channels.get('501801149071097866').sendMessage({embed: {
-    color: 15844367,
+    color: 15158332,
     author: {
       name: "User Report",
       icon_url: message.guild.iconURL
@@ -91,7 +91,7 @@ client.on('message', message => {
       }, 
       {
         name: "Reason",
-        value: (`${rreason}`)
+        value: (`**${rreason}**`)
       }
     ],
     timestamp: new Date(),
@@ -135,10 +135,9 @@ client.on('message', message => {
             return message.channel.sendMessage("I don't have the permission (KICK_MEMBER) to do this.");
         }
         kickMember.kick().then(member => {
-           message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
+            message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
         }).catch(console.error);
-        }
-        
+        }      
     
     //COMMAND - BAN --- /ban @user --- bans a user from the server
     if (command === "ban") {
@@ -158,8 +157,10 @@ client.on('message', message => {
             return message.channel.sendMessage("I don't have the permission (BAN_MEMBER) to do this.");
         }
         banMember.ban().then(member => {
-           message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
+            message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
         }).catch(console.error);
         }
+  
+});
 
 client.login(process.env.BOT_TOKEN);
