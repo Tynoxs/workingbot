@@ -31,7 +31,7 @@ client.on('message', message => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
-    client.channels.get('501450922053074984').sendMessage(`${rUser} with ID: ${rUser.id} was reported by ${message.author} with ID: ${message.author.id}\nChannel: ${message.channel}\nTime: ${message.createdAt}\nReason: ${rreason}`);
+    client.channels.get('501450922053074984').sendMessage(`**USER REPORT**\n**Reported User** ${rUser} with ID: ${rUser.id} \n**By:** ${message.author} with ID: ${message.author.id}\n**Channel:** ${message.channel}\n**Time:** ${message.createdAt}\n**Reason:** ${rreason}`);
     }
   
    //COMMAND - CLEAR --- /clear [0] --- clears the amount of msg defined in the command
