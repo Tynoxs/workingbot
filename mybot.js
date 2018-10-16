@@ -24,14 +24,7 @@ client.on('message', message => {
         } 
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
-  
-    if (command === "test") {
-    message.channel.send({embed: {
-    color: 3447003,
-    description: "Test!"
-    }});
-  }
-  
+
     //COMMAND - SERVERINFO --- /serverinfo --- Displays usefull information of the Server
     if (command === "serverinfo") {
     if (message.author.bot) return;
