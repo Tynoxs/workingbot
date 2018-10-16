@@ -28,7 +28,7 @@ client.on('message', message => {
     if (command === "serverinfo") {
     if (message.author.bot) return;
     if(!message.author.bot) {
-    message.channel.sendMessage(`${message.guild.iconURL}\n**SERVER-INFO**\n**Server Name:** ${message.guild.name} \n**Created On:** ${message.guild.createdAt} \n**You Joined:** ${message.member.joinedAt}\n**Total Members:** ${message.guild.memberCount}`);
+    message.channel.sendMessage(`**SERVER-INFO**\n**Server Name:** ${message.guild.name} \n**Created On:** ${message.guild.createdAt} \n**You Joined:** ${message.member.joinedAt}\n**Total Members:** ${message.guild.memberCount}`);
     }
     }
   
