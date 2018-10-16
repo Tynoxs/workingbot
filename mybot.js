@@ -16,6 +16,14 @@ client.on('message', message => {
     var argresult = args.join('');
 
   
+    .setDescription("Server Information")
+    .setColor("#15f153")
+    .setThumbnail(sicon)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
+  
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
         if (message.author.bot) return;
@@ -24,6 +32,10 @@ client.on('message', message => {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
+    }
+  
+    if (command === "serverinfo") {
+    message.channel.sendMessage(`${message.guild.iconURL}\n**SERVER-INFO**\n**Server Name:** ${message.guild.name} \n**Created On:** ${message.guild.createdAt} \n**You Joined:** ${message.member.joinedAt}\n**Total Members:** ${message.guild.memberCount}`);
     }
   
     //COMMAND - REPORT --- /report @User REASON --- Reports a User and send the report to the report channel
