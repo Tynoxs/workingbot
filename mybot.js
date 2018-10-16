@@ -25,7 +25,9 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-    if (command === "test") {
+  
+    //SERVERINFORMATION
+    if (command === "serverinfo") {
     message.channel.send({embed: {
     color: 3447003,
     author: {
@@ -59,14 +61,6 @@ client.on('message', message => {
 });
     }
 
-    //COMMAND - SERVERINFO --- /serverinfo --- Displays usefull information of the Server
-    if (command === "serverinfo") {
-    if (message.author.bot) return;
-    if(!message.author.bot) {
-    message.channel.sendMessage(`**Server Information**\n**Server Name:** ${message.guild.name} \n**Created On:** ${message.guild.createdAt} \n**You Joined:** ${message.member.joinedAt}\n**Total Members:** ${message.guild.memberCount}`);
-    }
-    }
-  
     //COMMAND - REPORT --- /report @User REASON --- Reports a User and send the report to the report channel
     if (command === "report") {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
