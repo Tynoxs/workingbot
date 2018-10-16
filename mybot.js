@@ -25,7 +25,7 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-    if (message.content === 'test') {
+    if (command === "test") {
     const embed = new RichEmbed()
       .setTitle('Title of Test')
       .setColor(0xFF0000)
