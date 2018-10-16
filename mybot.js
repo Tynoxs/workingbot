@@ -26,11 +26,10 @@ client.on('message', message => {
     }
   
     if (command === "test") {
-    const embed = new RichEmbed()
-      .setTitle('Title of Test')
-      .setColor(0xFF0000)
-      .setDescription('Description of Test');
-    message.channel.send(embed);
+    message.channel.send({embed: {
+    color: 3447003,
+    description: "Test!"
+    }});
   }
   
     //COMMAND - SERVERINFO --- /serverinfo --- Displays usefull information of the Server
