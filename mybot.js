@@ -66,7 +66,41 @@ client.on('message', message => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return message.channel.send("Couldn't find user.");
     let rreason = args.join(" ").slice(22);
-    client.channels.get('501801149071097866').sendMessage(`**USER REPORT**\n**Reported User:** ${rUser} with ID: ${rUser.id} \n**By:** ${message.author} with ID: ${message.author.id}\n**Channel:** ${message.channel}\n**Time:** ${message.createdAt}\n**Reason:** ${rreason}`);
+    client.channels.get('501801149071097866').sendMessage({embed: {
+    color: 15158332,
+    author: {
+      name: "User Report",
+      icon_url: message.guild.iconURL
+    },
+    description: "A User has been reported on The HUB.",
+    fields: [{
+        name: "Reported User",
+        value: (`${rUser} with ID ${rUser.id}`)
+      },
+      {
+        name: "Reported By",
+        value: (`${message.author} with ID ${message.author.id}`)
+      },
+      {
+        name: "Channel",
+        value: (`${message.channel}`)
+      },
+      {
+        name: "Time",
+        value: (`${message.createdAt}`)
+      }, 
+      {
+        name: "Reason",
+        value: (`${rreason}`)
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});
     message.channel.sendMessage("*User has been reported!*");
     message.delete().catch(O_o=>{});
     }
