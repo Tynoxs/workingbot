@@ -28,8 +28,35 @@ client.on('message', message => {
     if (command === "test") {
     message.channel.send({embed: {
     color: 3447003,
-    description: "Test!"
-    }});
+    author: {
+      name: "Server Information",
+      icon_url: message.guild.iconURL
+    },
+    description: "Everything you need to know about The HUB",
+    fields: [{
+        name: "Server Name",
+        value: (`${message.guild.name}`)
+      },
+      {
+        name: "Created On",
+        value: (`${message.guild.createdAt}`)
+      },
+      {
+        name: "You Joined",
+        value: (`${message.member.joinedAt}`)
+      },
+      {
+        name: "Total Members",
+        value: (`${message.guild.memberCount}`)
+      }       
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});
     }
 
     //COMMAND - SERVERINFO --- /serverinfo --- Displays usefull information of the Server
