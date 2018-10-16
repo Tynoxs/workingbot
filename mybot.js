@@ -91,7 +91,7 @@ client.on('message', message => {
       }, 
       {
         name: "Reason",
-        value: (`**${rreason}**`)
+        value: (`${rreason}`)
       }
     ],
     timestamp: new Date(),
