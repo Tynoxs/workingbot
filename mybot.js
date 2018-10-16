@@ -25,6 +25,15 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+    if (message.content === 'test') {
+    const embed = new RichEmbed()
+      .setTitle('Title of Test')
+      .setColor(0xFF0000)
+      .setDescription('Description of Test');
+    message.channel.send(embed);
+  }
+  
+    //COMMAND - SERVERINFO --- /serverinfo --- Displays usefull information of the Server
     if (command === "serverinfo") {
     if (message.author.bot) return;
     if(!message.author.bot) {
