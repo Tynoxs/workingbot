@@ -69,7 +69,7 @@ client.on('message', message => {
         value: "Reports a user to the admins"
       },
       {
-        name: "/shelp,
+        name: "/shelp",
         value: "Shows all staff commands"
       }
     ],
