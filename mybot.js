@@ -27,6 +27,17 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+    //COMMAND - UPDATE MEMBER COUNT
+    if (command === "upmember") {
+        if (message.author.bot) return;
+        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+        if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+        message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+        message.channel.sendMessage("*Member Count has beed updated!*");
+    }
+  
     //RANDOM MEMES
     if (command === "meme") {
         if (message.author.bot) return;
