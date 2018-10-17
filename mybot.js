@@ -7,9 +7,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
 });
 
-client.on('message', message => {
-      
-    setInterval(intervalFunc, 5000);
+client.on('message', message => {  
     
     if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
