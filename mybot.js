@@ -26,10 +26,13 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
-    while (1 === 1) {
+    function updateMemberCount() {
         message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
         client.channels.get('501450922053074984').sendMessage("Member Count has been updated!");
     }
+  
+    setInterval(updateMemberCount, 15000);
+    
   
     //RANDOM MEMES
     if (command === "meme") {
