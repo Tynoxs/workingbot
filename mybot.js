@@ -28,7 +28,6 @@ client.on('message', message => {
   
     function updateMemberCount() {
         message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-        client.channels.get('501450922053074984').sendMessage("Member Count has been updated!");
     }
   
     setInterval(updateMemberCount, 15000);
