@@ -119,9 +119,9 @@ client.on('message', message => {
       icon_url: message.guild.iconURL,
       text: "© TheHUB"
     }
-    }
   }
 });
+    }
     }
   
     //SERVERINFORMATION
