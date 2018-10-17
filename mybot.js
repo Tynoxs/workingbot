@@ -5,7 +5,7 @@ const prefix = '/'
 client.on('ready', () => {
   console.log('I am ready!');
   client.user.setStatus('available')
-  client.user.setPresence({ game: { name: 'Type /help', type: 0 } });
+  client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
 });
 
 client.on('message', message => {
