@@ -8,12 +8,6 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-  
-    if (1 === 1) {
-    function intervalFunc() {
-    client.channels.get('501450922053074984').sendMessage("Test");
-    }
-    }
       
     setInterval(intervalFunc, 5000);
     
