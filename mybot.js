@@ -32,11 +32,8 @@ client.on('message', message => {
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
-        function updateMemberCount() {
         message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-        client.channels.get('501450922053074984').sendMessage("Updated!");
-        }
-        setInterval(updateMemberCount, 15000);
+        message.channel.sendMessage("*Member Count has been updated!*");
     }
 
     //RANDOM MEMES
