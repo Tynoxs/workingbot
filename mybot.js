@@ -9,6 +9,12 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+  
+    function intervalFunc() {
+    client.channels.get('501450922053074984').sendMessage("Test");
+    }
+
+    setInterval(intervalFunc, 5000);
     
     if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
