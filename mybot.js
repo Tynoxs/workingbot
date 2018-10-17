@@ -85,7 +85,7 @@ client.on('message', message => {
     }
   
     //repond to hello
-    if(message.content === "hello" || "hi" || "guten tag" || "hallo" || "wazzup" || "what's up") {
+    if(message.content === "hello") {
       if (message.author.bot) return;
       if (!message.author.bot) {
       function random_greeting(greet)
