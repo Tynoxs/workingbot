@@ -3,9 +3,9 @@ const client = new Discord.Client();
 const prefix = '/'
 
 client.on('ready', () => {
-  console.log('I am ready!');
   client.user.setStatus('available')
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
+  client.channels.get('501450922053074984').sendMessage("I'm Online!");
 });
 
 client.on('message', message => {
