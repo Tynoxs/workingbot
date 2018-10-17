@@ -25,6 +25,7 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+    //RANDOM MEMES
     if (command === "meme") {
         if (message.author.bot) return;
         if (!message.author.bot) {
@@ -42,6 +43,85 @@ client.on('message', message => {
         }
     }
   
+    //COMMAND --- HELP  
+    if (command === "help") {
+    message.channel.send({embed: {
+    color: 10181046,
+    author: {
+      name: "Command List",
+      icon_url: message.guild.iconURL
+    },
+    description: "A list of all HUB Bot commands",
+    fields: [{
+        name: "/help",
+        value: "Don't have to explain"
+      },
+      {
+        name: "/meme",
+        value: "Posts a random meme/video/joke"
+      },
+      {
+        name: "/serverinfo",
+        value: "Serverinformation"
+      },
+      {
+        name: "/report @User reason",
+        value: "Reports a user to the admins"
+      },
+      {
+        name: "/shelp,
+        value: "Shows all staff commands"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});
+    }
+  
+  
+    //COMMAND --- HELP  
+    if (command === "shelp") {
+    let adminRole = message.guild.roles.find("name", "➤ Administrator ✉");
+    if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+        } 
+    if(message.member.roles.has(adminRole.id)) {
+    message.channel.send({embed: {
+    color: 10038562,
+    author: {
+      name: "Admin Command List",
+      icon_url: message.guild.iconURL
+    },
+    description: "(O) = Owner, (A) = Admin, (M) = Mod",
+    fields: [{
+        name: "(M) /kick @User",
+        value: "Kicks a user from the server"
+      },
+      {
+        name: "(M) /ban @User",
+        value: "Bans a user from the server"
+      },
+      {
+        name: "(O) /alert -msg-",
+        value: "Sends a staff message to the #lounge channel"
+      },
+      {
+        name: "(M) /clear X",
+        value: "Deletes X messages"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});
+    }
   
     //SERVERINFORMATION
     if (command === "serverinfo") {
