@@ -5,15 +5,16 @@ const prefix = '/'
 client.on('ready', () => {
   client.user.setStatus('available')
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
-  client.channels.get('501450922053074984').sendMessage("I'm Online!");
 });
 
 client.on('message', message => {
   
+    if (1 === 1) {
     function intervalFunc() {
     client.channels.get('501450922053074984').sendMessage("Test");
     }
-
+    }
+      
     setInterval(intervalFunc, 5000);
     
     if (!message.content.startsWith(prefix)) return;
