@@ -84,19 +84,19 @@ client.on('message', message => {
 });
     }
   
-    //repond to hello
-    if(message.content.toLowerCase() === "hello") {
+    //D Size
+    if(command === "size") {
       if (message.author.bot) return;
       if (!message.author.bot) {
-      function random_greeting(greet)
+      function random_dsize(size)
         {
   
-        return greet[Math.floor(Math.random()*greet.length)];
+        return size[Math.floor(Math.random()*size.length)];
      
         }
 
-        const greet = ["Hello", "Hi", "Howdy", "How’s it going", "What’s up", "How’s your day", "Good to see you", "Nice to see you", "Long time no see", "Sup", "Wazzup", "Hiya"];
-        message.channel.sendMessage(random_greeting(greet) + " " + message.author);
+        const size = ["8=D", "8==D", "8===D", "8====D", "8======D", "8=======D", "8========D", "8=========D", "8==========D", "8===========D", "8============D", "8=============D", "8==============D", "8===============D", "8================D", "8=================D", "8==================D", "8===================D", "8====================D", "8=====================D", "8======================D", "8=======================D", "8========================D", "8=========================D", "8==========================D", "8===========================D", "8============================D", "8=============================D", "8==============================D", "8===============================D", "8================================D", "8=================================D", "8==================================D", "8===================================D"];
+        message.channel.sendMessage(random_dsize(size) + " " + message.author);
       }
     }
   
