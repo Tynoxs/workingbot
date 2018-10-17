@@ -84,6 +84,21 @@ client.on('message', message => {
 });
     }
   
+    //repond to hello
+    if(message.content === "hello" || "hi" || "guten tag" || "hallo" || "wazzup" || "what's up") {
+      if (message.author.bot) return;
+      if (!message.author.bot) {
+      function random_greeting(greet)
+        {
+  
+        return greet[Math.floor(Math.random()*greet.length)];
+     
+        }
+
+        const items = ["Hello", "Hi", "Howdy", "How’s it going", "What’s up", "How’s your day", "Good to see you", "Nice to see you", "Long time no see", "Sup", "Wazzup", "Hiya"];
+        message.channel.sendMessage(`${random_greeting(greet)} ${message.author}`);
+      }
+    }
   
     //COMMAND --- HELP  
     if (command === "shelp") {
