@@ -96,7 +96,7 @@ client.on('message', message => {
         }
 
         const greet = ["Hello", "Hi", "Howdy", "How’s it going", "What’s up", "How’s your day", "Good to see you", "Nice to see you", "Long time no see", "Sup", "Wazzup", "Hiya"];
-        message.channel.sendMessage(random_greeting(greet) + message.author);
+        message.channel.sendMessage(random_greeting(greet) + " " + message.author);
       }
     }
   
