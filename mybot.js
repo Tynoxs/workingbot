@@ -59,10 +59,6 @@ client.on('message', message => {
         value: "Don't have to explain"
       },
       {
-        name: "/meme",
-        value: "Posts a random meme/video/joke"
-      },
-      {
         name: "/serverinfo",
         value: "Serverinformation"
       },
@@ -70,6 +66,14 @@ client.on('message', message => {
         name: "/report @User reason",
         value: "Reports a user to the admins"
       },
+      {
+        name: "/meme",
+        value: "Posts a random meme/video/joke"
+      },
+      {
+        name: "/size",
+        value: "Shame or Fame"
+      },       
       {
         name: "/shelp",
         value: "Shows all staff commands"
