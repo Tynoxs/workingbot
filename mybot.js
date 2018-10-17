@@ -29,7 +29,7 @@ client.on('message', message => {
     }
   
     //COMMAND - UPDATE MEMBER COUNT
-    if ('guildMemberAdd' || 'guildMemberRemove') {
+    if (guildMemberAdd || guildMemberRemove) {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
         if(!message.member.roles.has(adminRole.id)) {
