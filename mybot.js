@@ -25,6 +25,23 @@ client.on('message', message => {
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
   
+    if (command === "meme") {
+        if (message.author.bot) return;
+        if (!message.author.bot) {
+          
+        function random_item(items)
+        {
+  
+        return items[Math.floor(Math.random()*items.length)];
+     
+        }
+
+        const items = ["https://cdn.discordapp.com/attachments/501361869706100756/502150588746694686/image0.png", "https://cdn.discordapp.com/attachments/501361869706100756/502141851546026004/Screenshot_20180619-124913.png", "https://cdn.discordapp.com/attachments/501361869706100756/502141850715684866/Screenshot_20180911-0733072.png", "https://cdn.discordapp.com/attachments/501361869706100756/502141850715684864/Screenshot_20180828-075059.png", "https://cdn.discordapp.com/attachments/501361869706100756/502137807842836493/image0.png"];
+        message.channel.sendMessage(random_item(items));
+          
+        }
+    }
+  
   
     //SERVERINFORMATION
     if (command === "serverinfo") {
