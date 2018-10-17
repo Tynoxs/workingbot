@@ -29,7 +29,7 @@ client.on('message', message => {
     //SERVERINFORMATION
     if (command === "serverinfo") {
     message.channel.send({embed: {
-    color: 3447003,
+    color: 10181046,
     author: {
       name: "Server Information",
       icon_url: message.guild.iconURL
