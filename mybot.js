@@ -51,7 +51,7 @@ client.on('message', message => {
      
         }
 
-        const items = [
+        const antwort = [
           "Yes", "No"];
         message.channel.sendMessage(random_antwort(antwort));
           
