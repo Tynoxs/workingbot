@@ -48,7 +48,7 @@ client.on('message', message => {
   
     if(command === "/8ball")
     {
-    bot.reply(message, doMagic8BallVoodoo());
+    message.channel.sendMessage(doMagic8BallVoodoo());
     }
   
     //Updated Member Count
