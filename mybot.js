@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = '/'
-var varTimer = setInterval(memTimer, 15000);
+const prefix = '/';
+var myvar;
 
 client.on('ready', () => {
   client.user.setStatus('available')
@@ -10,9 +10,12 @@ client.on('ready', () => {
 
 client.on('message', message => {  
     
-    function memTimer() {
+    function myFunction() {
+    myVar = setInterval(alertFunc, 3000);
+    }
+
+    function alertFunc() {
     message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-    client.channels.get('501450922053074984').sendMessage("Updated Member Count!")
     }
     
     if (!message.content.startsWith(prefix)) return;
