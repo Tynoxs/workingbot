@@ -8,7 +8,9 @@ client.on('ready', () => {
 });
 
 client.on("message", async message => {
+  if (message.author.bot) {
   message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+  }
 });
 
 client.on('message', message => {  
