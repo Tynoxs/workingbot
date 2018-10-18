@@ -3,18 +3,17 @@ const client = new Discord.Client();
 const prefix = '/';
 var myvar;
 
-client.on('ready', () => {
-  client.user.setStatus('available')
-  client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
-  
-  function myFunction() {
+ function myFunction() {
     myVar = setInterval(alertFunc, 3000);
     }
 
     function alertFunc() {
     message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
     }
-  
+
+client.on('ready', () => {
+  client.user.setStatus('available')
+  client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
 });
 
 client.on('message', message => {  
