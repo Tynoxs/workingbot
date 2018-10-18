@@ -40,15 +40,22 @@ client.on('message', message => {
     }
   
     //8ball
+        if (command === "8ball") {
+        if (message.author.bot) return;
+        if (!message.author.bot) {
+          
+        function random_antwort(antwort)
+        {
   
-    function doMagic8BallVoodoo() {
-    var rand = ["Yes", "No", "Why are you even trying?", "What do you think? NO", "Maybe", "Never", "Yep", "I don't think so"];
-    return rand[Math.floor(Math.random()*rand.length)];
-    }
-  
-    if(command === "/8ball")
-    {
-    message.channel.sendMessage(doMagic8BallVoodoo());
+        return antwort[Math.floor(Math.random()*antwort.length)];
+     
+        }
+
+        const items = [
+          "Yes", "No"];
+        message.channel.sendMessage(random_antwort(antwort));
+          
+        }
     }
   
     //Updated Member Count
