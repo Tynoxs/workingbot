@@ -197,6 +197,15 @@ client.on('message', message => {
 });
     }
 
+    //COMMAND - Rename
+    if (command === "rename") {
+    let reUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!reUser) return message.channel.send("Couldn't find user.");
+    let rrename = args.join(" ").slice(22);
+    message.guild.members.get(reUser).setNickname(rrename);
+    message.channel.send(rUser + " has been renamed to " + rrename);
+    }
+
     //COMMAND - REPORT --- /report @User REASON --- Reports a User and send the report to the report channel
     if (command === "report") {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
