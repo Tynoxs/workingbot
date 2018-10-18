@@ -1,19 +1,18 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = '/';
-var myvar;
-
- function myFunction() {
-    myVar = setInterval(alertFunc, 3000);
-    }
-
-    function alertFunc() {
-    message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-    }
 
 client.on('ready', () => {
   client.user.setStatus('available')
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
+});
+
+client.on('guildMemberAdd', member => {
+message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+});
+
+client.on('guildMemberRemove', member => {
+message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
 });
 
 client.on('message', message => {  
@@ -33,16 +32,6 @@ client.on('message', message => {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
-    }
-  
-    if (command === "upmember") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-        if(!message.member.roles.has(adminRole.id)) {
-            return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-        message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-        message.channel.sendMessage("*Member Count has been updated!*");
     }
 
     //RANDOM MEMES
