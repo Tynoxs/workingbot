@@ -3,17 +3,17 @@ const client = new Discord.Client();
 const prefix = '/'
 var varTimer = setInterval(memTimer, 15000);
 
-function memTimer() {
-    message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-    client.channels.get('501450922053074984').sendMessage("Updated Member Count!")
-}
-
 client.on('ready', () => {
   client.user.setStatus('available')
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
 });
 
 client.on('message', message => {  
+    
+    function memTimer() {
+    message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+    client.channels.get('501450922053074984').sendMessage("Updated Member Count!")
+    }
     
     if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
