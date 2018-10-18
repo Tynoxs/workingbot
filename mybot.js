@@ -2,6 +2,8 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = '/';
 
+
+
 client.on('ready', () => {
   client.user.setStatus('available');
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
@@ -30,6 +32,23 @@ client.on('message', message => {
             return message.channel.sendMessage("You are not authorised to use this command!");
         } 
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
+    }
+  
+    if (command === "avatar") {
+    if (message.author.bot) return;
+    message.channel.sendMessage(message.author.avatarURL);
+    }
+  
+    //8ball
+  
+    function doMagic8BallVoodoo() {
+    var rand = ["Yes", "No", "Why are you even trying?", "What do you think? NO", "Maybe", "Never", "Yep", "I don't think so"];
+    return rand[Math.floor(Math.random()*rand.length)];
+    }
+  
+    if(command === "/8ball")
+    {
+    bot.reply(message, doMagic8BallVoodoo());
     }
   
     //Updated Member Count
