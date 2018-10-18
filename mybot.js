@@ -199,11 +199,12 @@ client.on('message', message => {
 
     //COMMAND - Rename
     if (command === "rename") {
+    if (message.author.bot) return;
     let reUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!reUser) return message.channel.send("Couldn't find user.");
     let rrename = args.join(" ").slice(22);
     message.guild.members.get(reUser).setNickname(rrename);
-    message.channel.send(rUser + " has been renamed to " + rrename);
+    message.channel.send(reUser + " has been renamed to " + rrename);
     }
 
     //COMMAND - REPORT --- /report @User REASON --- Reports a User and send the report to the report channel
