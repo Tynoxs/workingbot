@@ -6,17 +6,18 @@ var myvar;
 client.on('ready', () => {
   client.user.setStatus('available')
   client.user.setPresence({ game: { name: 'Say /help', type: 0 } });
-});
-
-client.on('message', message => {  
-    
-    function myFunction() {
+  
+  function myFunction() {
     myVar = setInterval(alertFunc, 3000);
     }
 
     function alertFunc() {
     message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
     }
+  
+});
+
+client.on('message', message => {  
     
     if (!message.content.startsWith(prefix)) return;
     let command = message.content.split(" ")[0];
