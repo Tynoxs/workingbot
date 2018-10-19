@@ -302,7 +302,7 @@ client.on('message', message => {
             message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
 
 	     client.channels.get('501801149071097866').sendMessage({embed: {
-    color: 10181046,
+    color: 15844367,
     author: {
       name: "Kick Report",
       icon_url: message.guild.iconURL
