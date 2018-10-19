@@ -35,9 +35,23 @@ client.on('message', message => {
     }
   
     if (command === "avatar") {
-    if (message.author.bot) return;
-    let avUser = message.guild.member(message.mentions.users.first());
-    message.channel.sendMessage(message.member.username.find("name", avUser).avatarURL);
+        var message = '';
+	if (m.content.indexOf(' ') !== -1) {
+		if (m.mentions) {
+			for (var user of m.mentions) {
+				message += user.avatarURL + '\n';
+			}
+			message.slice(0, -2);
+			bot.sendMessage(m.channel, message);
+		} else {
+			message = m.author.avatarURL;
+			bot.sendMessage(m.channel, message);
+		}
+	} else {
+		message = m.author.avatarURL;
+		bot.sendMessage(m.channel, message);
+	}
+}
     }
   
     //8ball
