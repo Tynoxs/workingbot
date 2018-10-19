@@ -36,7 +36,8 @@ client.on('message', message => {
   
     if (command === "avatar") {
     if (message.author.bot) return;
-    message.channel.sendMessage(message.author.avatarURL);
+    let avUser = message.guild.member(message.mentions.users.first());
+    message.channel.sendMessage(message.author.avatarURL.find("name", avUser));
     }
   
     //8ball
