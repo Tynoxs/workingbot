@@ -362,19 +362,6 @@ client.on('message', message => {
     	message.channel.sendMessage(pUser + " " + random_ranPickup(rPickup));
     }
   
-    //COMMAND - JOKE
-    if(command === "joke") {
-      if (message.author.bot) return;
-      if (!message.author.bot) {
-      function random_ranJoke(rJoke)
-        {
-  
-        return rJoke[Math.floor(Math.random()*size.length)];
-     
-        }
-
-        
-	
     //COMMAND --- HELP  
     if (command === "shelp") {
     let adminRole = message.guild.roles.find("name", "➤ Administrator ✉");
