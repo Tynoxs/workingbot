@@ -170,7 +170,7 @@ client.on('message', message => {
 	"Hey, my name’s Microsoft. Can I crash at your place tonight?",
 	"Was that an earthquake or did you just rock my world?",
 	"You’re so sweet, you’re giving me a toothache."];
-    	message.channel.sendMessage(pUser + " " + random_ranPickup(rPickup));
+    	message.channel.sendMessage(random_ranPickup(rPickup));
     }
 	
     //COMMAND --- INSULT
@@ -259,7 +259,7 @@ client.on('message', message => {
 		"Just because you have one doesn't mean you have to act like one.",
 		"We can always tell when you are lying. Your lips move.",
 		"Are you always this stupid or is today a special occasion?"];
-    	message.channel.sendMessage(iUser + " " + random_ranInsult(rInsult));
+    	message.channel.sendMessage(random_ranInsult(rInsult));
     }
   
     //8ball
