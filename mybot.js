@@ -35,23 +35,17 @@ client.on('message', message => {
     }
   
     if (command === "avatar") {
-        var message = '';
-	if (message.content.indexOf(' ') !== -1) {
-		if (message.mentions) {
-			for (var user of message.mentions) {
-				message += user.avatarURL + '\n';
-			}
-			message.slice(0, -2);
-			bot.sendMessage(message.channel, message);
-		} else {
-			message = message.author.avatarURL;
-			bot.sendMessage(message.channel, message);
-		}
-	} else {
-		message = message.author.avatarURL;
-		bot.sendMessage(message.channel, message);
+	let useravatar = message.mentions.users.first(); || message.author;
+	let args = message.content.split(` `);
+	    
+	if (message.author.bot) return;
+	message.channel.sendMessage(useravatar.avatarURL);
+	    
+	if(args[0]=== "avatar"){
+    	args.shift();
 	}
-}
+	    
+    }
     
   
     //8ball
