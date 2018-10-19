@@ -36,20 +36,20 @@ client.on('message', message => {
   
     if (command === "avatar") {
         var message = '';
-	if (m.content.indexOf(' ') !== -1) {
-		if (m.mentions) {
-			for (var user of m.mentions) {
+	if (message.content.indexOf(' ') !== -1) {
+		if (message.mentions) {
+			for (var user of message.mentions) {
 				message += user.avatarURL + '\n';
 			}
 			message.slice(0, -2);
-			bot.sendMessage(m.channel, message);
+			bot.sendMessage(message.channel, message);
 		} else {
-			message = m.author.avatarURL;
-			bot.sendMessage(m.channel, message);
+			message = message.author.avatarURL;
+			bot.sendMessage(message.channel, message);
 		}
 	} else {
-		message = m.author.avatarURL;
-		bot.sendMessage(m.channel, message);
+		message = message.author.avatarURL;
+		bot.sendMessage(message.channel, message);
 	}
 }
     }
