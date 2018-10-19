@@ -147,7 +147,283 @@ client.on('message', message => {
         message.channel.sendMessage(message.author.username + ": " + random_dsize(size));
       }
     }
+	
+    //COMMAND --- INSULT
+    if (command === "insult") {
+    let iUser = message.guild.member(message.mentions.users.first());
+    if(!iUser) return message.channel.send("Couldn't find user.");
+    function random_ranInsult(rInsult)
+        {
   
+        return rInsult[Math.floor(Math.random()*size.length)];
+     
+        }
+
+        const rInsult = [
+		"If laughter is the best medicine, your face must be curing the world.", 
+		"You're so ugly, you scared the crap out of the toilet.", 
+		"Your family tree must be a cactus because everybody on it is a prick.", 
+		"No I'm not insulting you, I'm describing you.", 
+		"It's better to let someone think you are an Idiot than to open your mouth and prove it.", 
+		"If I had a face like yours, I'd sue my parents.", 
+		"Your birth certificate is an apology letter from the condom factory.", 
+		"I guess you prove that even god makes mistakes sometimes.", 
+		"The only way you'll ever get laid is if you crawl up a chicken's ass and wait.", 
+		"You're so fake, Barbie is jealous.",
+		"I’m jealous of people that don’t know you!", 
+		"My psychiatrist told me I was crazy and I said I want a second opinion. He said okay, you're ugly too.", 
+		"You're so ugly, when your mom dropped you off at school she got a fine for littering.", 
+		"If I wanted to kill myself I'd climb your ego and jump to your IQ.", 
+		"You must have been born on a highway because that's where most accidents happen.", 
+		"Brains aren't everything. In your case they're nothing.", 
+		"I don't know what makes you so stupid, but it really works.", 
+		"I can explain it to you, but I can’t understand it for you.", 
+		"Roses are red violets are blue, God made me pretty, what happened to you?",
+		"Behind every fat woman there is a beautiful woman. No seriously, your in the way.", 
+		"Calling you an idiot would be an insult to all the stupid people.", 
+		"You, sir, are an oxygen thief!", 
+		"Some babies were dropped on their heads but you were clearly thrown at a wall.", 
+		"Don't like my sarcasm, well I don't like your stupid.", 
+		"Why don't you go play in traffic.", 
+		"Please shut your mouth when you’re talking to me.", 
+		"I'd slap you, but that would be animal abuse.", 
+		"They say opposites attract. I hope you meet someone who is good-looking, intelligent, and cultured.",
+		"Stop trying to be a smart ass, you're just an ass.", 
+		"The last time I saw something like you, I flushed it.", 
+		"I'm busy now. Can I ignore you some other time?", 
+		"You have Diarrhea of the mouth; constipation of the ideas.", 
+		"If ugly were a crime, you'd get a life sentence.", 
+		"Your mind is on vacation but your mouth is working overtime.", 
+		"I can lose weight, but you’ll always be ugly.", 
+		"Why don't you slip into something more comfortable... like a coma.", 
+		"Shock me, say something intelligent.",
+		"If your gonna be two faced, honey at least make one of them pretty.", 
+		"Keep rolling your eyes, perhaps you'll find a brain back there.",
+		"You are not as bad as people say, you are much, much worse.", 
+		"I don't know what your problem is, but I'll bet it's hard to pronounce.",
+		"You get ten times more girls than me? ten times zero is zero...", 
+		"There is no vaccine against stupidity.",
+		"You're the reason the gene pool needs a lifeguard.", 
+		"Sure, I've seen people like you before - but I had to pay an admission.",
+		"How old are you? - Wait I shouldn't ask, you can't count that high.", 
+		"Have you been shopping lately? They're selling lives, you should go get one.",
+		"You're like Monday mornings, nobody likes you.", 
+		"Of course I talk like an idiot, how else would you understand me?",
+		"All day I thought of you... I was at the zoo.", 
+		"To make you laugh on Saturday, I need to you joke on Wednesday.",
+		"You're so fat, you could sell shade.", 
+		"I'd like to see things from your point of view but I can't seem to get my head that far up my ass.",
+		"Don't you need a license to be that ugly?", 
+		"My friend thinks he is smart. He told me an onion is the only food that makes you cry, so I threw a coconut at his face.",
+		"Your house is so dirty you have to wipe your feet before you go outside.", 
+		"If you really spoke your mind, you'd be speechless.",
+		"Stupidity is not a crime so you are free to go.", 
+		"You are so old, when you were a kid rainbows were black and white.",
+		"If I told you that I have a piece of dirt in my eye, would you move?", 
+		"You so dumb, you think Cheerios are doughnut seeds.",
+		"So, a thought crossed your mind? Must have been a long and lonely journey.", 
+		"You are so old, your birth-certificate expired.",
+		"Every time I'm next to you, I get a fierce desire to be alone.", 
+		"You're so dumb that you got hit by a parked car.",
+		"Keep talking, someday you'll say something intelligent!", 
+		"You're so fat, you leave footprints in concrete.",
+		"How did you get here? Did someone leave your cage open?", 
+		"Pardon me, but you've obviously mistaken me for someone who gives a damn.",
+		"Wipe your mouth, there's still a tiny bit of bullshit around your lips.", 
+		"Don't you have a terribly empty feeling - in your skull?",
+		"As an outsider, what do you think of the human race?", 
+		"Just because you have one doesn't mean you have to act like one.",
+		"We can always tell when you are lying. Your lips move.",
+		"Are you always this stupid or is today a special occasion?"];
+    	message.channel.sendMessage(iUser + " " + rInsult);
+    }
+	
+    //COMMAND --- Pickup
+    if (command === "pickup") {
+    let pUser = message.guild.member(message.mentions.users.first());
+    if(!pUser) return message.channel.send("Couldn't find user.");
+    function random_ranPickup(rPickup)
+        {
+  
+        return rPickup[Math.floor(Math.random()*size.length)];
+     
+        }
+
+        const rPickup = [
+	"Are you French because Eiffel for you.",
+	"Is that a mirror in your pocket? Cause I can see myself in your pants!",
+	"Are you religious? Cause you’re the answer to all my prayers.",
+	"Hey, tie your shoes! I don’t want you falling for anyone else.",
+	"You must be Jamaican, because Jamaican me crazy.",
+	"What has 36 teeth and holds back the Incredible Hulk? My zipper.",
+	"Somebody call the cops, because it’s got to be illegal to look that good!",
+	"I must be a snowflake, because I've fallen for you.",
+	"I know you're busy today, but can you add me to your to-do list?",
+	"If you were a steak you would be well done.",
+	"Hello, I'm a thief, and I'm here to steal your heart.",
+	"Are you cake? Cause I want a piece of that.",
+	"My love for you is like diarrhoea, I just can't hold it in.",
+	"Are you lost ma'am? Because heaven is a long way from here.",
+	"There is something wrong with my cell phone. It doesn't have your number in it.",
+	"If you were a library book, I would check you out.",
+	"Are you a cat because I'm feline a connection between us",
+	"If I were to ask you out on a date, would your answer be the same as the answer to this question?",
+	"If nothing lasts forever, will you be my nothing?",
+	"I'm new in town. Could you give me directions to your apartment?",
+	"I must be in a museum, because you truly are a work of art.",
+	"You spend so much time in my mind, I should charge you rent.",
+	"My lips are like skittles. Wanna taste the rainbow?",
+	"Well, here I am. What were your other two wishes?",
+	"Are you from Tennessee? Because you're the only 10 I see!",
+	"Are you a beaver? Cause daaaaaaaaam!",
+	"Life without you is like a broken pencil... pointless.",
+	"Do you want to see a picture of a beautiful person? (hold up a mirror)",
+	"Is your body from McDonald's? Cause I'm lovin' it!",
+	"Even if there wasn't gravity on earth, I'd still fall for you.",
+	"Roses are red, violets are blue, how would you like it if I came home with you?",
+	"I wish I were cross-eyed so I can see you twice",
+	"We're not socks. But I think we'd make a great pair.",
+	"Your lips look so lonely…Would they like to meet mine?",
+	"Are you a parking ticket? ‘Cause you’ve got fine written all over you.",
+	"Thank god I'm wearing gloves because you are too hot to handle.",
+	"If a fat man puts you in a bag at night, don't worry I told Santa I wanted you for Christmas.",
+	"I'm no photographer, but I can picture us together.",
+	"Do your legs hurt from running through my dreams all night?",
+	"Pinch me, you’re so fine I must be dreaming.",
+	"If you were a chicken, you'd be impeccable.",
+	"How much does a polar beat weight? Enough to break the ice!",
+	"Are you a 90 degree angle? Cause you are looking right!",
+	"Nice to meet you, I’m (your name) and you are... gorgeous!",
+	"If I were a transplant surgeon, I’d give you my heart.",
+	"Are you Israeli? Cause you Israeli hot.",
+	"On a scale from 1 to 10, you're a 9... And I'm the 1 you need.",
+	"Did it hurt? When you fell out of heaven?",
+	"If I could rearrange the alphabet I would put U and I together.",
+	"Remember me? Oh, that’s right, I’ve met you only in my dreams.",
+	"Is your name Google? Because you've got everything I'm searching for.",
+	"Your hand looks heavy. Here, let me hold it for you.",
+	"I’ve been wondering, do your lips taste as good as they look.",
+	"Are you from Starbucks because I like you a latte.",
+	"Are you a banana because I find you a peeling.",
+	"Do you like vegetables because I love you from my head tomatoes.",
+	"Have you been to the doctor's lately? Cause I think you're lacking some vitamin me.",
+	"Do you generate electricity with water through the process of hydro power? Because dammmm.",
+	"Do you like science because I've got my ion you.",
+	"Are you my appendix? Because I don't understand how you work but this feeling in my stomach makes me want to take you out.",
+	"Do you like sales? Because if you're looking for a good one, clothing is 100% off at my place.",
+	"I know this is going to sound cheesy, but I think you're the gratest.",
+	"If you were a triangle you'd be acute one.",
+	"Does your left eye hurt? Because you’ve been looking right all day.",
+	"My feet are getting cold… because you’ve knocked my socks off.",
+	"Wow, when god made you he was showing off.",
+	"If beauty were time, you’d be eternity.",
+	"Is your name Wi-fi? Because I'm really feeling a connection.",
+	"If looks could kill, you'd be a weapon of mass destruction.",
+	"Do you have a tan, or do you always look this hot?",
+	"Can I follow you home? Cause my parents always told me to follow my dreams.",
+	"If I were a cat I'd spend all 9 lives with you.",
+	"Are you a camera? Because every time I look at you, I smile.",
+	"Are you from Japan cause I'm trying to get in Japanties.",
+	"If you were a fruit you'd be a fineapple.",
+	"I'll give you a kiss. If you don't like it, you can return it.",
+	"Did you swallow magnets? Cause you're attractive.",
+	"Are you from China? Because I'm China get your number.",
+	"Do you have a name, or can I call you mine?",
+	"Are you craving Pizza? Because I’d love to get a pizz-a you",
+	"Wouldn't we look cute on a wedding cake together.",
+	"Would you grab my arm so I can tell my friends I've been touched by an angel?",
+	"Kiss me if I'm wrong, but dinosaurs still exist, right?",
+	"Is your dad a terrorist? Because you are the bomb.",
+	"You must be a ninja, because you snuck into my heart",
+	"Can you pinch me, because you're so fine I must be dreaming.",
+	"I may not be a genie, but I can make all your wishes come true!",
+	"Are you Australian? Because you meet all of my koala-fications.",
+	"I’m not drunk, I’m just intoxicated by you.",
+	"If I followed you home, would you keep me?",
+	"If you were words on a page, you’d be fine print.",
+	"Are you a keyboard ? Because you are my type.",
+	"There is something wrong with my phone. Could you call it for me to see if it rings?",
+	"I've seem to have lost my number, can I have yours?",
+	"If I had a garden I’d put your tulips and my tulips together",
+	"Did you hear of the new disease called beautiful, I think you're infected.",
+	"I thought Happiness starts with H. But why does mine starts with U.",
+	"If you were a vegetable you'd be a cutecumber.",
+	"You know what you would really look beautiful in? My arms.",
+	"My mom thinks I'm gay, can you help me prove her wrong?",
+	"I want someone to look at me the way I look at chocolate cake.",
+	"Is it hot in here or is it just you?",
+	"Are you going to kiss me or do I have to lie to my diary?",
+	"Feel my t-shirt, it’s made of boyfriend material.",
+	"You must be a magician, because every time I look at you, everyone else disappears.",
+	"Your name must be Coca Cola, because you're so-da-licious.",
+	"You're like a dictionary... you add meaning to my life.",
+	"My doctor says I'm lacking vitamin U.",
+	"Did your licence get suspended for driving all these guys crazy?",
+	"Do you believe in love at first sight or should I walk past again?",
+	"When a penguin finds a mate they stay with them for the rest of their life. Will you be my penguin?",
+	"Can I take a picture of you so santa knows what I want for christmas?",
+	"I'm new in town, could you give me directions to your apartment?",
+	"I'll cook you dinner, if you cook me breakfast",
+	"What does it feel like to be the most beautiful girl in the room?",
+	"Good thing I just bought term life insurance … because I saw you and my heart stopped!",
+	"If I had a dollar for every time I thought of you, I’d be in a higher tax bracket.",
+	"Hey, my name’s Microsoft. Can I crash at your place tonight?",
+	"Was that an earthquake or did you just rock my world?",
+	"You’re so sweet, you’re giving me a toothache."];
+    	message.channel.sendMessage(pUser + " " + rPickup);
+    }
+  
+    //COMMAND - JOKE
+    if(command === "joke") {
+      if (message.author.bot) return;
+      if (!message.author.bot) {
+      function random_ranJoke(rJoke)
+        {
+  
+        return rJoke[Math.floor(Math.random()*size.length)];
+     
+        }
+
+        const rJoke = [
+	"Today at the bank, an old lady asked me to help check her balance. So I pushed her over.",
+	"I bought some shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.",
+	"I told my girlfriend she drew her eyebrows too high. She seemed surprised.",
+	"My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.",
+	"I'm so good at sleeping. I can do it with my eyes closed.",
+	"My boss told me to have a good day.. so I went home.",
+	"Why is Peter Pan always flying? He neverlands.",
+	"A woman walks into a library and asked if they had any books about paranoia. The librarian says: They're right behind you!",
+	"The other day, my wife asked me to pass her lipstick but I accidentally passed her a glue stick. She still isn't talking to me.",
+	"Why do blind people hate skydiving? It scares the hell out of their dogs.",
+	"When you look really closely, all mirrors look like eyeballs.",
+	"What do you call a guy with a rubber toe? Roberto.",
+	"What did the pirate say when he turned 80 years old? Aye matey.",
+	"My wife told me I had to stop acting like a flamingo. So I had to put my foot down.",
+	"I couldn't figure out why the baseball kept getting larger. Then it hit me.",
+	"Why did the old man fall in the well? Because he couldn't see that well.",
+	"I ate a clock yesterday, it was very time consuming.",
+	"Whatdya call a frenchman wearing sandals? Phillipe Phillope.",
+	"A blind man walks into a bar. And a table. And a chair.",
+	"I know a lot of jokes about unemployed people but none of them work.",
+	"What's orange and sounds like a parrot? A carrot.",
+	"Did you hear about the italian chef that died? He pasta way.",
+	"Why couldn't the bicycle stand up? Because it was two tired!",
+	"Parallel lines have so much in common. It’s a shame they’ll never meet.",
+	"My wife accused me of being immature. I told her to get out of my fort.",
+	"Where do you find a cow with no legs? Right where you left it.",
+	"When a deaf person sees someone yawn do they think it’s a scream?",
+	"As I suspected, someone has been adding soil to my garden. The plot thickens.",
+	"How do crazy people go through the forest? They take the physco path.",
+	"And the lord said unto John, 'Come forth and you will receive eternal life'. John came fifth and won a toaster.",
+	"What did the traffic light say to the car? Don’t look! I’m about to change.",
+	"I just wrote a book on reverse psychology. Do *not* read it!",
+	"What did one hat say to the other? You stay here. I’ll go on ahead.",
+	"Why wouldn’t the shrimp share his treasure? Because he was a little shellfish."
+		       ];
+        message.channel.sendMessage(random_ranJoke(rJoke));
+      }
+    }
+	
     //COMMAND --- HELP  
     if (command === "shelp") {
     let adminRole = message.guild.roles.find("name", "➤ Administrator ✉");
