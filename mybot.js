@@ -39,7 +39,7 @@ client.on('message', message => {
 	let args = message.content.split(` `);
 	    
 	if (message.author.bot) return;
-	message.channel.sendMessage(useravatar.avatarURL);
+	message.channel.sendMessage(message.mentions.users.first.avatarURL);
 	    
 	if(args[0]=== "avatar"){
     	args.shift();
