@@ -150,7 +150,7 @@ client.on('message', message => {
 	
     //COMMAND --- INSULT
     if (command === "insult") {
-    let iUser = message.guild.member(message.mentions.users.first());
+    let iUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!iUser) return message.channel.send("Couldn't find user.");
     function random_ranInsult(rInsult)
         {
@@ -240,7 +240,7 @@ client.on('message', message => {
 	
     //COMMAND --- Pickup
     if (command === "pickup") {
-    let pUser = message.guild.member(message.mentions.users.first());
+    let pUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!pUser) return message.channel.send("Couldn't find user.");
     function random_ranPickup(rPickup)
         {
