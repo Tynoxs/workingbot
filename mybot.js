@@ -53,7 +53,7 @@ client.on('message', message => {
         }
 
         const antwort = [
-          "Yes", "No", "I think so yes", "Probably not", "Probably yes", "´Certainly not"];
+          "Yes", "No", "I think so yes", "Probably not", "Probably yes", "´Certainly not", "Well, I don't know", "I don't think so"];
         message.channel.sendMessage(random_antwort(antwort));
           
         }
