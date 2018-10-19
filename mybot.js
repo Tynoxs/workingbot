@@ -35,16 +35,8 @@ client.on('message', message => {
     }
   
     if (command === "avatar") {
-	let useravatar = message.mentions.users.first(); || message.author;
-	let args = message.content.split(` `);
-	    
-	if (message.author.bot) return;
-	message.channel.sendMessage(message.mentions.users.first.avatarURL);
-	    
-	if(args[0]=== "avatar"){
-    	args.shift();
-	}
-	    
+	 if (message.author.bot) return;   
+	 message.channel.sendMessage(message.author.avatarURL);    
     }
     
   
