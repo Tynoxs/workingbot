@@ -40,7 +40,7 @@ client.on('message', message => {
     }
     
     //COMMAND --- Pickup
-    if (command === "pickup") {
+    if (command === "testpickup") {
      let pUser = message.guild.member(message.mentions.users.first());
      if(!pUser) return message.channel.send("Couldn't find user.");
      function random_ranPickup(rPickup)
@@ -174,7 +174,7 @@ client.on('message', message => {
     }
 	
     //COMMAND --- INSULT
-    if (command === "insult") {
+    if (command === "testinsult") {
     let iUser = message.guild.member(message.mentions.users.first());
     if(!iUser) return message.channel.send("Couldn't find user.");
     function random_ranInsult(rInsult)
@@ -263,8 +263,10 @@ client.on('message', message => {
     }
   
     //8ball
-        if (command === "8ball") {
+        if (command === "insult") {
         if (message.author.bot) return;
+	let aUser = message.guild.member(message.mentions.users.first());
+     	if(!aUser) return message.channel.send("Couldn't find user.");
         if (!message.author.bot) {
           
         function random_antwort(antwort)
@@ -351,7 +353,7 @@ client.on('message', message => {
 		"We can always tell when you are lying. Your lips move.",
 		"Are you always this stupid or is today a special occasion?"  
 	];
-        message.channel.sendMessage(random_antwort(antwort));
+        message.channel.sendMessage(aUser + random_antwort(antwort));
           
         }
     }
