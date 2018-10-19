@@ -284,6 +284,7 @@ client.on('message', message => {
    if (command === "kick") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+	let kReason = args.join(" ").slice(22);
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         }
@@ -299,6 +300,39 @@ client.on('message', message => {
         }
         kickMember.kick().then(member => {
             message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
+
+	     client.channels.get('501801149071097866').sendMessage({embed: {
+    color: 10181046,
+    author: {
+      name: "Kick Report",
+      icon_url: message.guild.iconURL
+    },
+    description: "A User has been kicked from The HUB!",
+    fields: [{
+        name: "Kicked User",
+        value: (`${kickMember} with ID ${kickMember.id}`)
+      },
+      {
+        name: "Kicked by",
+        value: (`${message.author} with ID ${message.author.id}`)
+      },
+      {
+        name: "Kicked At",
+        value: (`${message.createdAt}`)
+      },
+      {
+        name: "Reason",
+        value: (`${kReason}`)
+      }      
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});	
+		
         }).catch(console.error);
         }      
     
@@ -306,6 +340,7 @@ client.on('message', message => {
     if (command === "ban") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+	let bReason = args.join(" ").slice(22);
         if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
         }
@@ -321,6 +356,39 @@ client.on('message', message => {
         }
         banMember.ban().then(member => {
             message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
+		
+	    client.channels.get('501801149071097866').sendMessage({embed: {
+    color: 15105570,
+    author: {
+      name: "Ban Report",
+      icon_url: message.guild.iconURL
+    },
+    description: "A User has been banned from The HUB!",
+    fields: [{
+        name: "Banned User",
+        value: (`${banMember} with ID ${banMember.id}`)
+      },
+      {
+        name: "Banned by",
+        value: (`${message.author} with ID ${message.author.id}`)
+      },
+      {
+        name: "Banned At",
+        value: (`${message.createdAt}`)
+      },
+      {
+        name: "Reason",
+        value: (`${bReason}`)
+      }      
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});		
+		
         }).catch(console.error);
         }
   
