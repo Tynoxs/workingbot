@@ -52,7 +52,7 @@ client.on('message', message => {
 		bot.sendMessage(message.channel, message);
 	}
 }
-    }
+    
   
     //8ball
         if (command === "8ball") {
