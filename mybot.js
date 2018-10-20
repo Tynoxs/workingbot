@@ -724,13 +724,13 @@ client.on('message', message => {
    if (command === "clear") {
          if (message.author.bot) return;
          let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-	 let delAmount = args.join(" ").slice(22);
+	 let delAmount = args.slice(1).join(" ");
          if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
          } 
          message.channel.bulkDelete(args[0]).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage(message.author + " deleted " + delAmount + "messages!"); 
+		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " + delAmount + " messages at " + new Date()); 
 		 
     });
     }
