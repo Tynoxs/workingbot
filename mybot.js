@@ -39,8 +39,10 @@ client.on('message', message => {
 	
     //avatar
     if (command === "avatar") {
-	 if (message.author.bot) return;   
-	 message.channel.sendMessage(message.author.avatarURL);    
+	 if (message.author.bot) return;  
+	 let avatarUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    	 if(!avatarUser) return message.channel.send("Couldn't find user.");
+	 message.channel.sendMessage(avatarUser.avatarURL);    
     }
 	
     //Facts
@@ -729,7 +731,7 @@ client.on('message', message => {
          } 
          message.channel.bulkDelete(args[0]).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage(message.author.displayAvatarURL + message.author.displayname + " deleted " args[0] + " messages!"); 
+		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " args[0] + " messages!"); 
 
     });
     }
