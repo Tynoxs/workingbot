@@ -722,14 +722,14 @@ client.on('message', message => {
   
    //COMMAND - CLEAR --- /clear [0] --- clears the amount of msg defined in the command
    if (command === "clear") {
-        if (message.author.bot) return;
-        let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
-	let delAmount = args.join(" ").slice(22);
-        if(!message.member.roles.has(adminRole.id)) {
-           return message.channel.sendMessage("You are not authorised to use this command!");
-        } 
-        message.channel.bulkDelete(args[0]).then(() => {
-        client.channels.get('501801149071097866').sendMessage({embed: {
+         if (message.author.bot) return;
+         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+         if(!message.member.roles.has(adminRole.id)) {
+            return message.channel.sendMessage("You are not authorised to use this command!");
+         } 
+         message.channel.bulkDelete(args[0]).then(() => {
+         
+		client.channels.get('501801149071097866').sendMessage({embed: {
     color: 9807270,
     author: {
       name: "Cleared Messages",
@@ -751,9 +751,10 @@ client.on('message', message => {
       text: "© TheHUB"
     }
   }
-});
-   });
-   }
+}); 
+		 
+    });
+    }
   
    //COMMAND - KICK --- /kick @user --- kicks a user from the server
    if (command === "kick") {
