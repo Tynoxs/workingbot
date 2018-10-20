@@ -129,7 +129,7 @@ client.on('message', message => {
 		"Just because you have one doesn't mean you have to act like one.",
 		"We can always tell when you are lying. Your lips move.",
 		"Are you always this stupid or is today a special occasion?"];
-	  message.channel.sendMessage(aUser + " " + random_antwort(antwort));
+	  	message.channel.sendMessage(aUser + " " + random_antwort(antwort));
 	 }
         }
 	  
@@ -268,7 +268,7 @@ client.on('message', message => {
 		"Hey, my name’s Microsoft. Can I crash at your place tonight?",
 		"Was that an earthquake or did you just rock my world?",
 		"You’re so sweet, you’re giving me a toothache."];
-        message.channel.sendMessage(pUser + " " + random_item(items));
+        	message.channel.sendMessage(pUser + " " + random_item(items));
           
         }
     }
@@ -345,16 +345,8 @@ client.on('message', message => {
      
         	}
 
-        	const qball = [
-			"I don't know", 
-			"Probably", 
-			"Yes", 
-			"No", 
-			"I think so yes",
-			"50% / 50%",
-			"I would say so, yes",
-			"Of course"];
-        message.channel.sendMessage(random_queball(qball));
+        	const qball = ["8=D", "8==D", "8===D", "8====D", "8======D", "8=======D", "8========D", "8=========D", "8==========D", "8===========D", "8============D", "8=============D", "8==============D", "8===============D", "8================D", "8=================D", "8==================D", "8===================D", "8====================D", "8=====================D", "8======================D", "8=======================D", "8========================D", "8=========================D", "8==========================D", "8===========================D", "8============================D", "8=============================D", "8==============================D", "8===============================D", "8================================D", "8=================================D", "8==================================D", "8===================================D"];
+        	message.channel.sendMessage(random_queball(qball));
       					}
     				}
 	
