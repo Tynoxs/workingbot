@@ -27,26 +27,6 @@ client.on('message', message => {
      
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
-	
-	//COMMAND Mute
-    if (command === "mute") {
-	let member = message.mentions.members.first();
-	if (!member) return message.reply("Couldn't find User.");
-	let muteRole = message.guild.roles.find("name", "muted");
-	if (!muteRole) return message.reply("Missing role - muted");
-	let params = message.content.split(" ").split(1);
-	let time = params[1];
-	if(!time) return message.reply("For how long?");
-
-member.addRole(muteRole.id);
-message.channel.send(`${member} you have been muted for ${ms(ms(time), {long: true})}`);
-
-setTimeout(function() {
-    member.removeRole(mute.id);
-    message.channel.send(`${member.user.tag} you've been unmuted! The mute lasted: ${ms(ms(time), {long: true})}`);
-    ms(time));
-}
-           }
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
