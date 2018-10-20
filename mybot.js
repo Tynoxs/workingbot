@@ -26,6 +26,18 @@ client.on('message', message => {
      
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
+	
+   //setnickname
+	if (command === "setnick") {
+                    if (message.author.bot) return;
+                    let nickUser = message.guild.member(message.mentions.users.first());
+                    let changeIn = args.join(" ");
+                    if(!changeIn) return message.channel.send("Cmon, if you change someones Nickname already atleast give him one.");  
+                    if (!message.author.bot) {
+                        message.channel.sendMessage(nickUser + "'s Nickname was changed in " + changeIn);
+                    message.member.find("name", nickUser).setNickname(changeIn)
+                    }
+               }
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
