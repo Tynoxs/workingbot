@@ -42,7 +42,7 @@ client.on('message', message => {
 	 if (message.author.bot) return;  
 	 let avatarUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     	 if(!avatarUser) return message.channel.send("Couldn't find user.");
-	 message.channel.sendMessage(avatarUser.avatarURL);    
+	 message.channel.sendMessage(message.mentions.users.avatarURL);    
     }
 	
     //Facts
