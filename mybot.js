@@ -155,7 +155,7 @@ client.on('message', message => {
       
         }
          const joke = [
-		""
+		"test"
 	 ];
 	  	message.channel.sendMessage(random_rjoke(joke));
 	 }
