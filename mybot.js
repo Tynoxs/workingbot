@@ -730,8 +730,8 @@ client.on('message', message => {
          } 
          message.channel.bulkDelete(args[0]).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " + delAmount + " messages at " + new Date()); 
-		 
+		client.channels.get('501801149071097866').sendMessage(`${message.member.displayname} cleared ${args[0]} messages.`); 
+
     });
     }
   
