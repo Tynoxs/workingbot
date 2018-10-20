@@ -155,7 +155,7 @@ client.on('message', message => {
       
         }
          const joke = [
-		"Did you hear about the restaurant on the moon? Great food, no atmosphere.",
+				"Did you hear about the restaurant on the moon? Great food, no atmosphere.",
 		"What do you call a fake noodle? An Impasta.",
 		"How many apples grow on a tree? All of them.",
 		"Want to hear a joke about paper? Nevermind it's tearable.",
@@ -177,9 +177,9 @@ client.on('message', message => {
 		"The shovel was a ground-breaking invention.",
 		"Dad, can you put the cat out? I didn't know it was on fire.",
 		"This graveyard looks overcrowded. People must be dying to get in there.",
-		'Whenever the cashier at the grocery store asks my dad if he would like the milk in a bag he replies, "No, just leave it in the carton!"',
+		"Whenever the cashier at the grocery store asks my dad if he would like the milk in a bag he replies, No, just leave it in the carton!",
 		"5/4 of people admit that they’re bad with fractions.",
-		'Two goldfish are in a tank. One says to the other, "do you know how to drive this thing?"',
+		"Two goldfish are in a tank. One says to the other, do you know how to drive this thing?",
 		"What do you call a man with a rubber toe? Roberto.",
 		"What do you call a fat psychic? A four-chin teller.",
 		"I would avoid the sushi if I was you. It’s a little fishy.",
@@ -195,18 +195,17 @@ client.on('message', message => {
 		"Did I tell you the time I fell in love during a backflip? I was heels over head.",
 		"I don’t play soccer because I enjoy the sport. I’m just doing it for kicks.",
 		"People don’t like having to bend over to get their drinks. We really need to raise the bar."
-		 "Today at the bank, an old lady asked me to help check her balance. So I pushed her over.",
+		"Today at the bank, an old lady asked me to help check her balance. So I pushed her over.",
 		"I bought some shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.",
 		"I told my girlfriend she drew her eyebrows too high. She seemed surprised.",
 		"My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.",
 		"I'm so good at sleeping. I can do it with my eyes closed.",
 		"My boss told me to have a good day.. so I went home.",
 		"Why is Peter Pan always flying? He neverlands.",
-		'A woman walks into a library and asked if they had any books about paranoia. The librarian says "They’re right behind you!"',
+		"A woman walks into a library and asked if they had any books about paranoia. The librarian says: They’re right behind you!",
 		"The other day, my wife asked me to pass her lipstick but I accidentally passed her a glue stick. She still isn't talking to me.",
 		"Why do blind people hate skydiving? It scares the hell out of their dogs.",
 		"When you look really closely, all mirrors look like eyeballs.",
-		'My friend says to me: "What rhymes with orange" I said: "No it doesn’t"',
 		"What do you call a guy with a rubber toe? Roberto.",
 		"What did the pirate say when he turned 80 years old? Aye matey.",
 		"My wife told me I had to stop acting like a flamingo. So I had to put my foot down.",
@@ -225,7 +224,7 @@ client.on('message', message => {
 		"When a deaf person sees someone yawn do they think it’s a scream?",
 		"As I suspected, someone has been adding soil to my garden. The plot thickens.",
 		"How do crazy people go through the forest? They take the physco path.",
-		'And the lord said unto John, "Come forth and you will receive eternal life". John came fifth and won a toaster.',
+		"And the lord said unto John, Come forth and you will receive eternal life. John came fifth and won a toaster.",
 		"What did the traffic light say to the car? Don’t look! I’m about to change.",
 		"I just wrote a book on reverse psychology. Do *not* read it!",
 		"What did one hat say to the other? You stay here. I’ll go on ahead.",
@@ -419,7 +418,7 @@ client.on('message', message => {
       },  
       {
         name: "/joke",
-        value: "Generates random joke"
+        value: "Generates a random joke"
       },
       {
         name: "/shelp",
