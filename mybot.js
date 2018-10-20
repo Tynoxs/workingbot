@@ -176,6 +176,7 @@ client.on('message', message => {
         }
          const antwort = [
 		"Dumbass.",
+		"You should wear a condom on your head, cause if your gonna act like a dick. You might as well dress like one.",
 		"With a face like yours, I wish I was blind.",
 		"You're so fat you need cheat codes to play Wii Fit.",
 		"If you really want to know about mistakes, you should ask your parents.",
@@ -368,6 +369,9 @@ client.on('message', message => {
      
         }
 	const items = [
+		"Do you have a Band-Aid? Because I just scraped my knee falling for you.",
+		"You just turned my floppy disc into a hard drive.",
+		"Let's play titanic. You'll be the iceberg and I'll go down on you.",
 		"Girl, are those space pants? Cause your butt is out of this world!",
 		"Your hand looks heavy, can I hold it for you?",
 		"My doctor says I’m lacking Vitamin U",
