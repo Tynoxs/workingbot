@@ -36,7 +36,8 @@ client.on('message', message => {
         } 
         client.channels.get('501251380833550336').sendMessage(`**Staff Alert:** ${args.join(" ")}`);
     }
-  
+	
+    //avatar
     if (command === "avatar") {
 	 if (message.author.bot) return;   
 	 message.channel.sendMessage(message.author.avatarURL);    
