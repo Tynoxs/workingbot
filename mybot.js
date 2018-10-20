@@ -730,29 +730,7 @@ client.on('message', message => {
          } 
          message.channel.bulkDelete(args[0]).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage({embed: {
-    color: 9807270,
-    author: {
-      name: "Cleared Messages",
-      icon_url: message.author.avatarURL
-    },
-    description: "Messages have been deleted",
-    fields: [{
-        name: "By",
-        value: (`${message.author}`)
-      },
-	     {
-        name: "Amount",
-        value: (`${delAmount}`)
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: message.guild.iconURL,
-      text: "© TheHUB"
-    }
-  }
-}); 
+		client.channels.get('501801149071097866').sendMessage(message.author + " deleted " + delAmount + "messages!"); 
 		 
     });
     }
