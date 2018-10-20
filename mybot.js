@@ -729,7 +729,7 @@ client.on('message', message => {
          } 
          message.channel.bulkDelete(args[0]).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage(message.author..displayAvatarURL + message.author.displayname + " deleted " args[0] + " messages!"); 
+		client.channels.get('501801149071097866').sendMessage(message.author.displayAvatarURL + message.author.displayname + " deleted " args[0] + " messages!"); 
 
     });
     }
