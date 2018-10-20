@@ -31,11 +31,11 @@ client.on('message', message => {
 	if (command === "setnick") {
                     if (message.author.bot) return;
                     let nickUser = message.guild.member(message.mentions.users.first());
-                    let changeIn = args.join(" ");
+                    let changeIn = args.join(" ").slice(22);
                     if(!changeIn) return message.channel.send("Cmon, if you change someones Nickname already atleast give him one.");  
                     if (!message.author.bot) {
-                        message.channel.sendMessage(nickUser + "'s Nickname was changed in " + changeIn);
-                    message.member.find("name", nickUser).setNickname(changeIn)
+                    message.channel.sendMessage(nickUser + "'s Nickname was changed in " + changeIn);
+                    message.member.find("name", nickUser).setNickname(changeIn);
                     }
                }
 
