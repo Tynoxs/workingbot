@@ -61,7 +61,7 @@ client.on('message', message => {
     let iUser = message.guild.member(message.mentions.users.first());
     if(!iUser) return message.channel.send("Couldn't find user.");
     if (message.author.bot) return; 
-    if ("message.author.bot) {
+    if (!message.author.bot) {
     function random_ranInsult(rInsult)
         {
   
@@ -153,7 +153,7 @@ client.on('message', message => {
      let pUser = message.guild.member(message.mentions.users.first());
      if(!pUser) return message.channel.send("Couldn't find user.");
      if (message.author.bot) return; 
-     if ("message.author.bot) {
+     if (!message.author.bot) {
      function random_ranPickup(rPickup)
          {
    
