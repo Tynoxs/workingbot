@@ -724,6 +724,7 @@ client.on('message', message => {
    if (command === "clear") {
          if (message.author.bot) return;
          let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+	 let delAmount = args.join(" ").slice(22);
          if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
          } 
@@ -738,11 +739,11 @@ client.on('message', message => {
     description: "Messages have been deleted",
     fields: [{
         name: "By",
-        value: "Don't have to explain"
+        value: (`${message.author}`)
       },
 	     {
         name: "Amount",
-        value: delAmount
+        value: (`${delAmount}`)
       }
     ],
     timestamp: new Date(),
