@@ -336,9 +336,7 @@ client.on('message', message => {
     	if(command === "8ball") {
       		if (message.author.bot) return;
 		let questionball = args.join(" ");
-		if (!questionball) {
-			message.channel.sendMessage("That does not look like a question.");
-		}
+		if(!questionball) return message.channel.send("That does not look like a question.");
       		if (!message.author.bot) {
       			function random_queball(qball)
         	{
