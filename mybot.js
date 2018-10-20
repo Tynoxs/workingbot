@@ -194,7 +194,7 @@ client.on('message', message => {
 		"I used to work in a shoe recycling shop. It was sole destroying.",
 		"Did I tell you the time I fell in love during a backflip? I was heels over head.",
 		"I don’t play soccer because I enjoy the sport. I’m just doing it for kicks.",
-		"People don’t like having to bend over to get their drinks. We really need to raise the bar."
+		"People don’t like having to bend over to get their drinks. We really need to raise the bar.",
 		"Today at the bank, an old lady asked me to help check her balance. So I pushed her over.",
 		"I bought some shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.",
 		"I told my girlfriend she drew her eyebrows too high. She seemed surprised.",
