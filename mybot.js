@@ -724,11 +724,34 @@ client.on('message', message => {
    if (command === "clear") {
         if (message.author.bot) return;
         let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
+	let delAmount = args.join(" ").slice(22);
         if(!message.member.roles.has(adminRole.id)) {
            return message.channel.sendMessage("You are not authorised to use this command!");
         } 
         message.channel.bulkDelete(args[0]).then(() => {
-        message.channel.send(`Cleared ${args[0]} messages.`).then(msg => msg.delete(5000));
+        client.channels.get('501801149071097866').sendMessage({embed: {
+    color: 9807270,
+    author: {
+      name: "Cleared Messages",
+      icon_url: message.author.avatarURL
+    },
+    description: "Messages have been deleted",
+    fields: [{
+        name: "By",
+        value: "Don't have to explain"
+      },
+	     {
+        name: "Amount",
+        value: delAmount
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: message.guild.iconURL,
+      text: "© TheHUB"
+    }
+  }
+});
    });
    }
   
