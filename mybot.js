@@ -300,8 +300,16 @@ client.on('message', message => {
       },
       {
         name: "/size",
-        value: "Shame or Fame"
-      },       
+        value: "100% accurate"
+      },
+      {
+        name: "/insult",
+        value: "Generates random insults"
+      },  
+      {
+        name: "/pickup",
+        value: "Generates random pickup lines"
+      },  
       {
         name: "/shelp",
         value: "Shows all staff commands"
