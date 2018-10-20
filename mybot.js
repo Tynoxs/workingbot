@@ -280,7 +280,7 @@ client.on('message', message => {
     color: 10181046,
     author: {
       name: "Command List",
-      icon_url: warnicon
+      icon_url: message.guild.iconURL
     },
     description: "A list of all HUB Bot commands",
     fields: [{
