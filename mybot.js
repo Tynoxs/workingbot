@@ -40,9 +40,8 @@ client.on('message', message => {
     //avatar
     if (command === "avatar") {
 	 if (message.author.bot) return;  
-	 let avatarUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    	 if(!avatarUser) return message.channel.send("Couldn't find user.");
-	 message.channel.sendMessage(message.mentions.users.avatarURL);    
+	 if (!message.author.bot) {
+	 message.channel.sendMessage(message.author.avatarURL);    }
     }
 	
     //Facts
