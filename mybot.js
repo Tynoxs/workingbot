@@ -53,7 +53,7 @@ client.on('message', message => {
 	//var y = d * 365.25;
 	
 	muteMember.addRole(muteRole);
-	message.channel.sendMessage(muteMember + " has been muted for " + muteTime + " minutes!");
+	message.channel.sendMessage(muteMember + " you have been muted for" + muteTime + " minute/s!");
 	
 	setTimeout(function() {
 		muteMember.removeRole(muteRole);
