@@ -764,14 +764,15 @@ client.on('message', message => {
    //COMMAND - CLEAR --- /clear [0] --- clears the amount of msg defined in the command
    if (command === "clear") {
          if (message.author.bot) return;
-	 if (args[0] > 10) return message.channel.send("Only 10 Messages at a time!");
+	 if (args[0] > 11) return message.channel.send("Only 10 Messages at a time!");
+	 var delNum = args[0] + 1;
          let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
          if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
          } 
-         message.channel.bulkDelete(args[0]).then(() => {
+         message.channel.bulkDelete(delNum).then(() => {
          
-		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " + args[0] + " messages!"); 
+		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " + delNum + " messages!"); 
 
     });
     }
