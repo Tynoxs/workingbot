@@ -32,6 +32,11 @@ client.on('message', message => {
 		if (message.author.bot)	 return;
 		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz /quiz\n2. Empty -empty-\n3. Empty -empty-");
 	}
+	
+	//Mute
+	if (command === "mute") {
+		let
+	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
@@ -46,8 +51,9 @@ client.on('message', message => {
     //avatar
     if (command === "avatar") {
 	 if (message.author.bot) return;  
+	 const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
 	 if (!message.author.bot) {
-	 message.channel.sendMessage(message.author.avatarURL);    }
+	 message.channel.sendMessage(member.user.displayAvatarURL());    }
     }
 	
     //Facts
