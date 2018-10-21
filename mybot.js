@@ -41,6 +41,14 @@ client.on('message', message => {
 	if(!muteRole) return message.channel.sendMessage("There is no role named -muted-");
     	let muteTime = args.join(" ").slice(22);
 	if(!muteTime) return message.channel.sendMessage("Enter a Time!");
+		
+ 	var secTime = muteTime * 1000;
+	var minTime = secTime * 60;
+	//var m = s * 60;
+	//var h = m * 60;
+	//var d = h * 24;
+	//var w = d * 7;
+	//var y = d * 365.25;
 	
 	muteMember.addRole(muteRole);
 	message.channel.sendMessage(muteMember + " has been muted for " + muteTime + " minutes!");
@@ -48,7 +56,7 @@ client.on('message', message => {
 	setTimeout(function() {
 		muteMember.removeRole(muteRole);
 		message.channel.sendMessage(muteMember + " you have been unmuted, please behave!");
-	}, muteTime);
+	}, minTime);
 	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
