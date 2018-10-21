@@ -26,6 +26,12 @@ client.on('message', message => {
      
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
+	
+	//game
+	if (command === "game") {
+		if (message.author.bot)	 return;
+		message.channel.sendMessage("**What game would you like to play?**\n\n1. Quiz -/game1\n2. Empty -empty-\n3. Empty -empty");
+	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
