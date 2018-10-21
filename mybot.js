@@ -52,8 +52,7 @@ client.on('message', message => {
     if (command === "avatar") {
 	 if (message.author.bot) return;
 	 if (message.author.bot) {
-	 const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
-	 message.channel.sendMessage(member.user.displayAvatarURL());    }
+	 message.channel.sendMessage(message.author.AvatarURL);    }
     }
 	
     //Facts
