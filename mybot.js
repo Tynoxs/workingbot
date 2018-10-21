@@ -43,12 +43,12 @@ client.on('message', message => {
 	if(!muteTime) return message.channel.sendMessage("Enter a Time!");
 	
 	muteMember.addRole(muteRole.id);
-	message.channel.sendMessage(muteMember + " has been muted for " + muteTime);
+	message.channel.sendMessage(muteMember.username + " has been muted for " + muteTime + " minutes!");
 	
 	setTimeout(function() {
 		muteMember.removeRole(muteRole.id);
 		message.channel.sendMessage(muteMember + " you have been unmuted, please behave!");
-	})
+	}, muteTime);
 	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
