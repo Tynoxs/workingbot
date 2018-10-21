@@ -649,22 +649,27 @@ client.on('message', message => {
       name: "Admin Command List",
       icon_url: message.guild.iconURL
     },
-    description: "(O) = Owner, (A) = Admin, (M) = Mod",
-    fields: [{
+    description: "(O) = Owner, (A) = Admin, (M) = Mod, (S) = Staff",
+    fields: [
+      {
+        name: "(O) /alert -msg-",
+        value: "Sends a staff message to the #lounge channel. Command example: /alert Welcome all!"
+      },
+      {
         name: "(M) /kick @User",
-        value: "Kicks a user from the server"
+        value: "Kicks a user from the server. Command example: /kick @Nico *kickreason*"
       },
       {
         name: "(M) /ban @User",
-        value: "Bans a user from the server"
-      },
-      {
-        name: "(O) /alert -msg-",
-        value: "Sends a staff message to the #lounge channel"
+        value: "Bans a user from the server. Command example: /ban @Nico *banreason*"
       },
       {
         name: "(M) /clear X",
-        value: "Deletes X messages"
+        value: "Deletes X messages. Command example: /clear 10"
+      },
+      {
+        name: "(S) /mute @User *timeinminutes*",
+        value: "Blocks Chat&Voice of a User for X minutes. Command example: /mute @Nico 5"
       }
     ],
     timestamp: new Date(),
@@ -759,6 +764,7 @@ client.on('message', message => {
    //COMMAND - CLEAR --- /clear [0] --- clears the amount of msg defined in the command
    if (command === "clear") {
          if (message.author.bot) return;
+	 if (args[0] > 10) return message.channel.send("Only 10 Messages at a time!");
          let adminRole = message.guild.roles.find("name", "➤ Senior Administrator ✉");
          if(!message.member.roles.has(adminRole.id)) {
             return message.channel.sendMessage("You are not authorised to use this command!");
