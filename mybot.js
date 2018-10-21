@@ -51,9 +51,9 @@ client.on('message', message => {
     //avatar
     if (command === "avatar") {
 	 if (message.author.bot) return;  
-	 const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+	 let amember = message.mentions.members.first();
 	 if (!message.author.bot) {
-	 message.channel.sendMessage(member.user.displayAvatarURL());    }
+	 message.channel.sendMessage(amember.user.displayAvatarURL());    }
     }
 	
     //Facts
