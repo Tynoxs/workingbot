@@ -770,9 +770,7 @@ client.on('message', message => {
             return message.channel.sendMessage("You are not authorised to use this command!");
          } 
          message.channel.bulkDelete(args[0]).then(() => {
-         	message.channel.bulkDelete(1);
 		client.channels.get('501801149071097866').sendMessage(message.author.username + " deleted " + args[0] + " messages!"); 
-
     });
     }
   
