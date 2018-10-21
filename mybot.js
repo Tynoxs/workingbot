@@ -30,7 +30,7 @@ client.on('message', message => {
 	//game
 	if (command === "game") {
 		if (message.author.bot)	 return;
-		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz -/game1\n2. Empty -empty-\n3. Empty -empty-");
+		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz -Do /game1-\n2. Empty -empty-\n3. Empty -empty-");
 	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
