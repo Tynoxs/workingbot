@@ -52,7 +52,7 @@ client.on('message', message => {
     if (command === "avatar") {
 	 if (message.author.bot) return;
 	 if (message.author.bot) {
-	 message.channel.sendMessage(message.author.AvatarURL);    }
+	 message.channel.sendMessage(message.author.avatarURL);    }
     }
 	
     //Facts
