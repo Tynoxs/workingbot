@@ -52,7 +52,6 @@ client.on('message', message => {
     if (command === "avatar") {
 	 if (message.author.bot) return;  
 	 let amember = message.mentions.members.first();
-	 if (!message.author.bot) {
 	 message.channel.sendMessage(amember.user.displayAvatarURL());    }
     }
 	
