@@ -664,7 +664,7 @@ client.on('message', message => {
         value: "Bans a user from the server. Command example: /ban @Nico *banreason*"
       },
       {
-        name: "(M) /clear X",
+        name: "(M) /clear *1-10*",
         value: "Deletes X messages. Command example: /clear 10"
       },
       {
