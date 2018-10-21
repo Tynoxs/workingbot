@@ -207,7 +207,7 @@ client.on('message', message => {
 	if(!member) return message.channel.sendMessage("Invalid Username");
 	let muteRole = message.guild.roles.find("name", "muted");
 	if(!muteRole) return message.channel.sendMessage("There is no role named `muted`");
-	let params = message.content.split(" ").slice(1);
+	let params = args.join(" ").slice(22);
 	let time = params[1];
 	if(!time) return message.channel.sendMessage("Enter a time");
 	
