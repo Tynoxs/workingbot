@@ -26,6 +26,23 @@ client.on('message', message => {
      
     let args = message.content.split(" ").slice(1);
     var argresult = args.join('');
+	
+    //join 
+	if (command === "join") {
+		if(message.member.voiceChannel)
+		{
+		if(!message.guild.voiceChannel) 
+		{ 
+		message.member.voiceChannel.join() 
+			.then(connection => {
+			message.reply("Joined");
+		}) 
+		} 
+		} 
+		else {
+			message.reply("Failed"); 
+		     } 
+	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
     if (command === "alert") {
