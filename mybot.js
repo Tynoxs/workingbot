@@ -35,6 +35,8 @@ client.on('message', message => {
 	
 	//Mute
 	if (command === "mute") {
+	let staffRole = message.guild.roles.find("name", "➤ Staff ✉");
+    	if(!message.member.roles.has(staffRole.id)) return message.channel.sendMessage("You are not authorised to use this command!");
 	let muteMember = message.mentions.members.first();
 	if(!muteMember) return message.channel.sendMessage("Invalid Username");
 	let muteRole = message.guild.roles.find("name", "muted");
