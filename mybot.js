@@ -42,11 +42,11 @@ client.on('message', message => {
     	let muteTime = args.join(" ").slice(22);
 	if(!muteTime) return message.channel.sendMessage("Enter a Time!");
 	
-	muteMember.addRole(muteRole.id);
-	message.channel.sendMessage(muteMember.username + " has been muted for " + muteTime + " minutes!");
+	muteMember.addRole(muteRole);
+	message.channel.sendMessage(muteMember + " has been muted for " + muteTime + " minutes!");
 	
 	setTimeout(function() {
-		muteMember.removeRole(muteRole.id);
+		muteMember.removeRole(muteRole);
 		message.channel.sendMessage(muteMember + " you have been unmuted, please behave!");
 	}, muteTime);
 	}
