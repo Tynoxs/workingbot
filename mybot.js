@@ -48,7 +48,7 @@ client.on('message', message => {
 	setTimeout(function() {
 		muteMember.removeRole(muteRole.id);
 		message.channel.sendMessage(muteMember + " you have been unmuted, please behave!");
-	)}
+	})
 	}
 
     //COMMAND - ALERT --- /alert msg --- posts a staff msg in "lounge"
