@@ -17,8 +17,10 @@ client.on("message", async message => {
   	message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
   	}
 	
-	if (message.guild.memberCount === 3) {
-	     	client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached 3 Members!")
+	if (message.author.bot) {
+		if (message.guild.memberCount === 3) {
+	     	client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached 3 Members!");
+		}
 	    }
 });
 
