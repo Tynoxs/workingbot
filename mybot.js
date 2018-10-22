@@ -33,6 +33,14 @@ client.on('message', message => {
 		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz /quiz\n2. Empty -empty-\n3. Empty -empty-");
 	}
 	
+	if (message.guild.memberCount === 100) {
+	     	message.channel.sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached :100: Members!")
+	    }
+	
+	if (message.guild.memberCount === 3) {
+	     	client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached 3 Members!")
+	    }
+	
 	//Mute
 	if (command === "mute") {
 	let staffRole = message.guild.roles.find("name", "➤ Staff ✉");
