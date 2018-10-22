@@ -16,12 +16,6 @@ client.on("message", async message => {
   	if (message.author.bot) {
   	message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
   	}
-	
-	if (message.author.bot) {
-		if (message.guild.memberCount === 3) {
-	     	client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached 3 Members!");
-		}
-	    }
 });
 
 client.on('message', message => {  
@@ -38,12 +32,6 @@ client.on('message', message => {
 		if (message.author.bot)	 return;
 		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz /quiz\n2. Empty -empty-\n3. Empty -empty-");
 	}
-	
-	if (message.guild.memberCount === 100) {
-	     	message.channel.sendMessage(":white_check_mark: Achievement Unlocked: The HUB reached :100: Members!")
-	    }
-	
-	
 	
 	//Mute
 	if (command === "mute") {
