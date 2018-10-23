@@ -34,11 +34,11 @@ client.on('message', message => {
 	}
 	
 	//google
-	if (command === "google") {
-		if (message.author.bot) return;
-		let search = args.join(" ");
-		message.channel.sendMessage("https://www.google.de/search?q=" + search);
-	}
+	//if (command === "google") {
+		//if (message.author.bot) return;
+		//let search = args.join(" ");
+		//message.channel.sendMessage("https://www.google.de/search?q=" + search);
+	//}
 	
 	//Mute
 	if (command === "mute") {
