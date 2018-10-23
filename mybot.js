@@ -14,20 +14,26 @@ const urbanlink = "http://api.urbandictionary.com/v0/define?term=";
 
 client.on("message", async message => {
 	
+	if (!message.content.startsWith(prefix)) return;
+   	let command = message.content.split(" ")[0];
+    	command = command.slice(prefix.length);   
+     
+   	let args = message.content.split(" ").slice(1);
+    	var argresult = args.join('');
+	
 	//Count Members
   	if (message.author.bot) {
-  	message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+  		message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+		client.channels.get('504352725484699698').sendMessage("/membercount " + message.guild.memberCount);
+		
+		if (command === "membercount" && ) {
+			let memberss = args.join(" ");
+			if (memberss === 3) {
+			 message.channel.sendMessage("test 3");	
+			}
+		}
   	}
 	
-	//Achievements
-	var txtMemCount = message.guild.memberCount;
-	var intMemCount = parseInt(txtMemCount, 10);
-	
-	if (message.author.bot) {
-		if (intMemCount > 3 || intMemCount === 3 || intMemCount < 4) {
-			message.channel.sendMessage("Total Members of 3");
-		}
-	}
 });
 
 client.on('message', message => {  
