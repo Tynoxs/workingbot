@@ -13,11 +13,30 @@ const urbanlink = "http://api.urbandictionary.com/v0/define?term=";
 });
 
 client.on("message", async message => {
-
-	//Count Members
-  	if (message.author.bot) {
-  		message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);	
-	}
+	
+	if (!message.content.startsWith(prefix)) return;
+   	let command = message.content.split(" ")[0];
+    	command = command.slice(prefix.length);   
+     
+   	let args = message.content.split(" ").slice(1);
+    	var argresult = args.join('');
+	let memberss = args.join(" ");
+	
+ 	//Count Members
+  	if (!message.author.bot.get("id", 297430848859537408)) {
+		
+		//Reacts to Welcome Messages and updated Member Count
+  		message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
+		
+		//Sends a command to the Spam Channel
+		client.channels.get('504352725484699698').sendMessage("/membercount " + message.guild.memberCount);
+		
+		//
+		if (command === "membercount") {
+			if (memberss === 3) {
+			 client.channels.get('501450922053074984').sendMessage("Achievement: 3 Members!");
+					    }
+						    }
 });
 
 client.on('message', message => {  
