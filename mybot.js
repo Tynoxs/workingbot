@@ -33,6 +33,13 @@ client.on('message', message => {
 		message.channel.sendMessage("**What game would you like to play?**\n1. Quiz /quiz\n2. Empty -empty-\n3. Empty -empty-");
 	}
 	
+	//google
+	if (command === "google") {
+		if (message.author.bot) return;
+		let search = args.join(" ");
+		message.channel.sendMessage("https://www.google.de/search?q=" + search);
+	}
+	
 	//Mute
 	if (command === "mute") {
 	let staffRole = message.guild.roles.find("name", "➤ Staff ✉");
