@@ -13,9 +13,20 @@ const urbanlink = "http://api.urbandictionary.com/v0/define?term=";
 });
 
 client.on("message", async message => {
+	
+	//Count Members
   	if (message.author.bot) {
   	message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
   	}
+	
+	//Achievements
+	if (message.author.bot) {
+		var txtMemCount = (`${message.guild.memberCount}`);
+		var intMemCount = parseInt(txtMemCount, 10);
+		if (intMemCount === 100 || intMemCount === 3) {
+			message.channel.sendMessage("Total Members of 3 or 100");
+		}
+	}
 });
 
 client.on('message', message => {  
