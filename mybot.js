@@ -37,6 +37,7 @@ client.on("message", async message => {
 			 client.channels.get('501450922053074984').sendMessage("Achievement: 3 Members!");
 					    }
 						    }
+	}
 });
 
 client.on('message', message => {  
