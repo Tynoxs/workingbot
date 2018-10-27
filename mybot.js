@@ -898,7 +898,7 @@ const prefix = '/';
     	}
   	}
 	});
-    	message.channel.sendMessage("*User has been reported!*");
+    	message.channel.sendMessage(":white_check_mark: User has been reported!");
     	message.delete().catch(O_o=>{});
     	}
   
@@ -936,7 +936,7 @@ const prefix = '/';
             return message.channel.sendMessage("I don't have the permission (KICK_MEMBER) to do this.");
         }
         kickMember.kick().then(member => {
-            message.channel.sendMessage(`*${member.user.username} was kicked!*`).catch(console.error);
+            message.channel.sendMessage(`:white_check_mark: ${member.user.username} was kicked!`).catch(console.error);
 
 	     client.channels.get('501801149071097866').sendMessage({embed: {
     	color: 15844367,
@@ -1002,7 +1002,7 @@ const prefix = '/';
             return message.channel.sendMessage("I don't have the permission (BAN_MEMBER) to do this.");
         }
         banMember.ban().then(member => {
-            message.channel.sendMessage(`*${member.user.username} was banned!*`).catch(console.error);
+            message.channel.sendMessage(`:white_check_mark: ${member.user.username} was banned!`).catch(console.error);
 		
 	    client.channels.get('501801149071097866').sendMessage({embed: {
     	color: 15105570,
