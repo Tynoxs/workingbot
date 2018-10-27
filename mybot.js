@@ -85,7 +85,11 @@ client.on('message', message => {
     if (command === "avatar") {
 	 if (message.author.bot) return;
 	 if (!message.author.bot) {
-	 message.channel.sendMessage(message.author.avatarURL); 
+		 
+		//Either diplay own or targeted User Avatar 
+		let userAvatar = message.mentions.users.first() || message.author;
+	 	message.channel.sendMessage(userAvatar.displayAvatarURL); 
+		 
 	    }
     }
 	
