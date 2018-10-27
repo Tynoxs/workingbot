@@ -15,26 +15,9 @@ client.on("message", async message => {
  	//Count Members
   	if (message.author.bot) {
 		
-		if (!message.content.startsWith(prefix)) return;
-    		let command = message.content.split(" ")[0];
-    		command = command.slice(prefix.length);   
-     
-    		let args = message.content.split(" ").slice(1);
-    		var argresult = args.join('');
-		
-		client.channels.get('504352725484699698').sendMessage("/updAchiev" + message.guild.memberCount);
-		
-		if (command === "updAchiev") {
-			let msgMemCount = args.join(" ").slice(22);
-			var intMemCount = msgMemCount.match(/\d/g);
-			
-			if (intMemCount === 3) {
-			    client.channels.get('504352725484699698').sendMessage(":white_check_mark: Achievement unlocked: **The HUB** has reached :100: members!");
-			    }
-		}
-	
 		//Reacts to Welcome Messages and updated Member Count
   		message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);	
+		
 	}
 });
 
