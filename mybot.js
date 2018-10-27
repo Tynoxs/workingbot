@@ -16,7 +16,7 @@ client.on("message", async message => {
   	if (message.author.bot) {
 		 
 		//Variables Member Count
-		var txtMemCount = (`${message.guild.memberCount}`);
+		var txtMemCount = message.guild.memberCount;
 		var intMemCount = parseInt(txtMemCount, 10);
 		
 		//Reacts to Welcome Messages and updated Member Count
@@ -25,7 +25,6 @@ client.on("message", async message => {
 		//Achievement unlocked 3 Members!
 		if (intMemCount === 3) {
 			client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement unlocked: **The HUB** has reached :100: members!");
-		 
 		}
 		
 	}
