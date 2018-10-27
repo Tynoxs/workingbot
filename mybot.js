@@ -14,14 +14,13 @@ client.on("message", async message => {
 
  	//Count Members
   	if (message.author.bot) {
-		 
-		//Variables Member Count
-		var txtMemCount = message.guild.memberCount;
-		var intMemCount = parseInt(txtMemCount, 10);
+		
+		var txtMemCount = message.guild.channels.get("id", "501258481718788097");
+		var intMemCount = txtMemCount.match(/\d/g);
 		
 		//Reacts to Welcome Messages and updated Member Count
   		message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);
-		
+
 		//Achievement unlocked 3 Members!
 		if (intMemCount === 3) {
 			client.channels.get('501450922053074984').sendMessage(":white_check_mark: Achievement unlocked: **The HUB** has reached :100: members!");
