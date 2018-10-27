@@ -46,7 +46,52 @@ const prefix = '/';
 	//                THE HUB BOT COMMANDS                  //
 	//                                                      //
 	//////////////////////////////////////////////////////////
-	
+		
+	//UPDATE LOG//////////////////////////////////////////////
+	if (command === "version") {
+		message.channel.send({embed: {
+		
+    	color: 0xc0c0c0,
+    	author: {
+      	name: "Update Log",
+      	icon_url: message.guild.iconURL
+		
+    	},
+		
+    	description: "A list of all the new features the bot has to offer.",
+    	fields: [
+		
+      	{
+		
+        name: "Bot Name",
+        value: "The HUB"
+		
+      	},
+      	{
+		
+        name: "Bot Version",
+        value: "V1.5"
+		
+      	},
+      	{
+		
+        name: "Changelog",
+        value: "- /avatar @Username now lets you get the avatar of every user.\n- /game has been added, lets you play games & quizes.\n- /help has been updated.\n- /meme has been removed.\n- Updated /pickup\n[BETA] New coin system, you now generate coins by chatting. Shop will follow?"
+		
+      	}
+    	],
+    	timestamp: new Date(),
+    	footer: {
+      	icon_url: message.guild.iconURL,
+      	text: "© TheHUB"
+    	}
+  	}
+	});
+    	}
+    	}
+  
+	}
+		
 	//Game////////////////////////////////////////////////////
 	if (command === "game") {
 		if (message.author.bot)	 return;
