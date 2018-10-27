@@ -76,7 +76,7 @@ const prefix = '/';
       	{
 		
         name: "Changelog",
-        value: "- /avatar @Username now lets you get the avatar of every user.\n- /game has been added, lets you play games & quizes.\n- /help has been updated.\n- /meme has been removed.\n- Updated /pickup\n\n[BETA] New coin system, you now generate coins by chatting. Shop will follow?"
+        value: "- /avatar @Username now lets you get the avatar of every user.\n- /game has been added, lets you play games & quizes.\n- /help has been updated.\n- /meme has been removed.\n- /pickup has been updated.\n\n**[BETA]** New coin system, you now generate coins by chatting. Shop will follow?\n"
 		
       	}
     	],
