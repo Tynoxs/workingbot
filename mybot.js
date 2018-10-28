@@ -47,11 +47,6 @@ const prefix = '/';
 	//                                                      //
 	//////////////////////////////////////////////////////////
 		
-	//BAN INVITES/////////////////////////////////////////////
-	if (message.includes("discord.gg")) {
-		message.delete();
-	}
-		
 	//UPDATE LOG//////////////////////////////////////////////
 	if (command === "version") {
 		message.channel.send({embed: {
