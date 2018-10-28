@@ -1,5 +1,5 @@
 {
-  "name": "HubBot",
+  "name": "hubbot",
   "description": "Bot for TheHUB",
   "version": "0.0.0",
   "main": "mybot.js",
