@@ -48,9 +48,7 @@ const prefix = '/';
 	//////////////////////////////////////////////////////////
 		
 	//IMAGE REMOVAL///////////////////////////////////////////
-	if (message.attachments.size > 0) {
-		message.channel.sendMessage("Please post pictures in the #media channel!");
-    	}
+	
 	
 	//UPDATE LOG//////////////////////////////////////////////
 	if (command === "version") {
