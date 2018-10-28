@@ -33,23 +33,18 @@ fs.readdir("./cmds/", (err, files) => {
 	bot.on('message', async message => {  
     
 	//Gets commands
-    	if (!message.content.startsWith(prefix)) return;
-    	let command = message.content.split(" ")[0];
-    	command = command.slice(prefix.length);   
-     
-	//Args - Everything after a command
-    	let args = message.content.split(" ").slice(1);
-   	var argresult = args.join('');
+    	if(message.author.bot) return;
+	if(message.channel.type === "dm") return;
 		
-	let cmd = bot.commands.get();
+	let messageArray = message.content.split(/\s+/g);
+	let command = messageArray[0];
+	let args = messageArray.slice(1);
+		
+	if(!command.startsWith(prefix)) return;
+		
+	let cmd = bot.commands.get(command.slice(prefix.length));
 	if (cmd) cmd.run(bot, message, args);
 		
-	if (message.author.bot) {
-		
-	//Reacts to Welcome Messages and updated Member Count
-  	message.guild.channels.find("id", "501258481718788097").setName("Member Count: " + message.guild.memberCount);	
-		
-	}
 	});
 		
 	bot.login(process.env.BOT_TOKEN);
