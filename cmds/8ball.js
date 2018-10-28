@@ -14,14 +14,14 @@ module.exports.run = async (bot, message, args) => {
 
 		//A list of random responses
     const qball = [
-			"I don't know", 
-			"Probably", 
-			"Yes", 
-			"No", 
-			"I think so yes",
-			"50% / 50%",
-			"I would say so, yes",
-			"Of course"];
+		"I don't know", 
+		"Probably", 
+		"Yes", 
+		"No", 
+		"I think so yes",
+		"50% / 50%",
+		"I would say so, yes",
+		"Of course"];
            
      //Outputs a random answer
      message.channel.sendMessage(random_queball(qball));
