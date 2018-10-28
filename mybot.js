@@ -48,6 +48,7 @@ const prefix = '/';
 	//////////////////////////////////////////////////////////
 		
 	//JOIN////////////////////////////////////////////////////
+	if (command === "join") {
 	if (message.member.voiceChannel) {
       		message.member.voiceChannel.join()
         	.then(connection => { // Connection is an instance of VoiceConnection
@@ -58,6 +59,7 @@ const prefix = '/';
 	} else {
       		message.reply('You need to join a voice channel first!');
     	}
+	}
 		
 	//IMAGE REMOVAL///////////////////////////////////////////
 	
