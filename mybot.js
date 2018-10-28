@@ -49,27 +49,9 @@ const prefix = '/';
 		
 	//IMAGE REMOVAL///////////////////////////////////////////
 	if (message.attachments.size > 0) {
-    	if (message.attachments.every(attachIsPng)){
 		message.channel.sendMessage("Please post pictures in the #media channel!");
     	}
-	if (message.attachments.every(attachIsJpg)){
-		message.channel.sendMessage("Please post pictures in the #media channel!");
-    	}
-	}
-
-	function attachIsPng(msgAttach) {
-    	var url = msgAttach.url;
-    	//True if this url is a png image.
-    	return url.indexOf("png", url.length - "png".length /*or 3*/) !== -1;
-	}
 	
-	function attachIsJpg(msgAttach) {
-    	var url = msgAttach.url;
-    	//True if this url is a png image.
-    	return url.indexOf("jpg", url.length - "jpg".length /*or 3*/) !== -1;
-	}
-	
-		
 	//UPDATE LOG//////////////////////////////////////////////
 	if (command === "version") {
 	
